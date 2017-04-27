@@ -22,7 +22,7 @@ class ServiceManager {
     
     private init() {}
     
-    fileprivate(set) var token: AccessToken?
+    fileprivate(set) var localUser: LocalUser?
     
     
     //MARK: - Auth
@@ -37,17 +37,17 @@ class ServiceManager {
                     completion(.error(message: "Something went wrong"))
                     return
                 }
-                
-                debugPrint("Logged In: \(response)")
-                
                 let success = !(response["error"] as! Bool)
-                let token = response["access_token"] as! [String: Any]
+                let email = response["user_email"] as! String
                 
-                let expires = token["expires_in"] as! Int
-                let userId = token["user_id"] as! Int
-                let tokenString = token["token_string"] as! String
+                let tokenDicrionary = response["access_token"] as! [String: Any]
                 
-                self.token = AccessToken(string: tokenString, expiresIn: Double(expires), userId: userId)
+                let expires = tokenDicrionary["expires_in"] as! Int
+                let userId = tokenDicrionary["user_id"] as! Int
+                let tokenString = tokenDicrionary["token_string"] as! String
+                let token = AccessToken(string: tokenString, expiresIn: Double(expires))
+                
+                self.localUser = LocalUser(id: userId, login: login, email: email, token: token)
                 
                 completion(.success(success))
         }
@@ -71,13 +71,14 @@ class ServiceManager {
                     completion(.error(message: "Something went wrong"))
                     return
                 }
-                let token = response["access_token"] as! [String: Any]
+                let tokenDicrionary = response["access_token"] as! [String: Any]
                 
-                let expires = token["expires_in"] as! Int
-                let userId = token["user_id"] as! Int
-                let tokenString = token["token_string"] as! String
+                let expires = tokenDicrionary["expires_in"] as! Int
+                let userId = tokenDicrionary["user_id"] as! Int
+                let tokenString = tokenDicrionary["token_string"] as! String
                 
-                self.token = AccessToken(string: tokenString, expiresIn: Double(expires), userId: userId)
+                let token = AccessToken(string: tokenString, expiresIn: Double(expires))
+                self.localUser = LocalUser(id: userId, login: login, email: email, token: token)
                 
                 completion(.success(success))
         }
@@ -85,8 +86,13 @@ class ServiceManager {
     
     
     func loadPosts(for group: String, offset: Int, count: Int, completion: @escaping ([Post]) -> Void) {
+        guard let user = localUser else {
+            completion([])
+            return
+        }
+        
         Alamofire
-            .request(PostRouter.loadPosts(group: group, offset: offset, count: count, userId: self.token!.userId))
+            .request(PostRouter.loadPosts(group: group, offset: offset, count: count, userId: user.id))
             .responseJSON { (dataResponse) in
                 
                 guard let response = dataResponse.result.value as? [String: Any] else {

@@ -39,6 +39,18 @@ public class MenuContainerViewController: ContainerViewController {
     }
 }
 
+// MARK: - SideMenuViewControllerDelegate
+
+extension MenuContainerViewController: SideMenuViewControllerDelegate {
+    
+    func sideMenuViewControllerDidSelectFeed(_ vc: SideMenuViewController) {
+        
+    }
+    func sideMenuViewControllerDidSelectLogout(_ vc: SideMenuViewController) {
+        
+    }
+}
+
 // MARK: - MenuContainerViewInput
 
 extension MenuContainerViewController: MenuContainerViewInput {

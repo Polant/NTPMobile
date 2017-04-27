@@ -49,6 +49,7 @@
 		1426851F1EB28E1800EDDCE9 /* FeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426851E1EB28E1800EDDCE9 /* FeedInteractor.swift */; };
 		142685211EB28E3900EDDCE9 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685201EB28E3900EDDCE9 /* FeedViewController.swift */; };
 		142685241EB28E5100EDDCE9 /* FeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685231EB28E5100EDDCE9 /* FeedRouter.swift */; };
+		142685271EB2984E00EDDCE9 /* LocalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685261EB2984E00EDDCE9 /* LocalUser.swift */; };
 		3E8154B305985CDE06D65C41 /* Pods_NTPMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		1426851E1EB28E1800EDDCE9 /* FeedInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedInteractor.swift; path = Logic/FeedInteractor.swift; sourceTree = "<group>"; };
 		142685201EB28E3900EDDCE9 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = View/FeedViewController.swift; sourceTree = "<group>"; };
 		142685231EB28E5100EDDCE9 /* FeedRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedRouter.swift; path = Route/FeedRouter.swift; sourceTree = "<group>"; };
+		142685261EB2984E00EDDCE9 /* LocalUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalUser.swift; sourceTree = "<group>"; };
 		7D0764A3EAAC9B95AF2380D1 /* Pods-NTPMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		AFE2E78804CD9334DE7FE0BC /* Pods-NTPMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.release.xcconfig"; sourceTree = "<group>"; };
 		CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NTPMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,10 +176,9 @@
 		142684B41EB2681C00EDDCE9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				142685281EB298B400EDDCE9 /* Managers */,
+				142685291EB29D4200EDDCE9 /* Entity */,
 				142684B51EB2681C00EDDCE9 /* AccessToken.swift */,
-				142684B61EB2681C00EDDCE9 /* KeyboardManager.swift */,
-				142684B71EB2681C00EDDCE9 /* Post.swift */,
-				142684B81EB2681C00EDDCE9 /* ServiceManager.swift */,
 				142684B91EB2681C00EDDCE9 /* Storyboard.swift */,
 			);
 			path = Models;
@@ -427,6 +428,24 @@
 			name = Route;
 			sourceTree = "<group>";
 		};
+		142685281EB298B400EDDCE9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				142684B61EB2681C00EDDCE9 /* KeyboardManager.swift */,
+				142684B81EB2681C00EDDCE9 /* ServiceManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		142685291EB29D4200EDDCE9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				142684B71EB2681C00EDDCE9 /* Post.swift */,
+				142685261EB2984E00EDDCE9 /* LocalUser.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
 		188DA02B3541745EE5D04982 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,6 +605,7 @@
 				142685241EB28E5100EDDCE9 /* FeedRouter.swift in Sources */,
 				142684DA1EB2681C00EDDCE9 /* Post.swift in Sources */,
 				142684E71EB2681C00EDDCE9 /* Router.swift in Sources */,
+				142685271EB2984E00EDDCE9 /* LocalUser.swift in Sources */,
 				142685021EB26D8B00EDDCE9 /* ContainerView.swift in Sources */,
 				1426850F1EB2742E00EDDCE9 /* OAuthRouter.swift in Sources */,
 				142684F81EB26D8300EDDCE9 /* MenuContainerViewController.swift in Sources */,

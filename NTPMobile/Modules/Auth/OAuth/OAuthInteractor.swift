@@ -14,16 +14,15 @@ class OAuthInteractor: Interactor<OAuthViewController> {
     
     func send(code: String, redirectURI: String) {
         
-        guard let appToken = ServiceManager.shared.token else { return }
+        guard let localUser = ServiceManager.shared.localUser else { return }
         
         let url = URL(string: "\(Constants.baseApiServicePath)/oauth/vk")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
-        request.httpBody = "code=\(code)&redirect_uri=\(redirectURI)&user_id=\(appToken.userId)".data(using: .utf8)
+        request.httpBody = "code=\(code)&redirect_uri=\(redirectURI)&user_id=\(localUser.id)".data(using: .utf8)
         
-        URLSession.shared.dataTask(with: request,
-                                   completionHandler: { (data, response, error) in
+        URLSession.shared.dataTask(with: request) { data, response, error in
                                     
                                     guard let data = data else { return }
                                     
@@ -34,7 +33,7 @@ class OAuthInteractor: Interactor<OAuthViewController> {
                                     DispatchQueue.main.async {
                                         self.viewController?.router.presentFeedViewController()
                                     }
-        }).resume()
+        }.resume()
     }
     
 }

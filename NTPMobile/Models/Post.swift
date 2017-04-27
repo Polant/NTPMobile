@@ -12,29 +12,19 @@ class Post {
     var id: String
     var timestamp: Int
     var text: String
+    var photoUrl: String?
     
-    init(id: String, timestamp: Int, text: String) {
+    init(id: String, timestamp: Int, text: String, photoUrl: String?) {
         self.id = id
         self.timestamp = timestamp
         self.text = text
+        self.photoUrl = photoUrl
     }
     
     init(with dictionary: [String: Any]) {
         self.id = dictionary["id"] as! String
         self.timestamp = dictionary["date"] as! Int
         self.text = dictionary["text"] as! String
-    }
-}
-
-// MARK: - JSON Convertation
-
-extension Post {
-    
-    var dictionaryValue: [String: Any] {
-        return [
-            "id": id,
-            "date": timestamp,
-            "text": text
-        ]
+        self.photoUrl = dictionary["photo_url"] as? String
     }
 }
