@@ -47,7 +47,7 @@ extension MenuContainerViewController: SideMenuViewControllerDelegate {
         
     }
     func sideMenuViewControllerDidSelectLogout(_ vc: SideMenuViewController) {
-        
+        self.dismiss(animated: true)
     }
 }
 

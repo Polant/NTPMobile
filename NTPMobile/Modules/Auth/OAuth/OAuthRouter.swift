@@ -31,6 +31,7 @@ class OAuthRouter: Router<OAuthViewController> {
         let sideMenuViewController = Storyboard.menu
             .instantiate()
             .instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
+        sideMenuViewController.delegate = container
         
         // Navigation
         let contentNavigationController = Storyboard.content
