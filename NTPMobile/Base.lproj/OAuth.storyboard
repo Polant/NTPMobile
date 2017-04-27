@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j0H-Cl-lw0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="AZ6-gV-IhU">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="j0H-Cl-lw0" customClass="ViewController" customModule="VKAuth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gOm-0j-0CU"/>
+                        <viewControllerLayoutGuide type="bottom" id="DHx-bH-bly"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vHu-LP-j1Y">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bH-3N-ROX">
+                                <rect key="frame" x="30" y="484" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.59215686270000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="q1f-8U-fZ6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="Login with VK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Iyv-mu-xe2"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk_logo" translatesAutoresizingMaskIntoConstraints="NO" id="URn-wb-Wtt">
+                                <rect key="frame" x="134.5" y="178.5" width="105" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="IoP-5U-2ul"/>
+                                    <constraint firstAttribute="width" secondItem="URn-wb-Wtt" secondAttribute="height" multiplier="1:1" id="ouv-lf-9Vw"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NTP Platform" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xn1-lK-lcg">
+                                <rect key="frame" x="103.5" y="105" width="169" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click 'Login' to continue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2a-05-vvW">
+                                <rect key="frame" x="96" y="354.5" width="182" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="URn-wb-Wtt" firstAttribute="centerX" secondItem="vHu-LP-j1Y" secondAttribute="centerX" id="Ai3-ee-dvD"/>
+                            <constraint firstItem="URn-wb-Wtt" firstAttribute="top" secondItem="Xn1-lK-lcg" secondAttribute="bottom" constant="40" id="I2L-HJ-l5f"/>
+                            <constraint firstItem="Xn1-lK-lcg" firstAttribute="top" secondItem="gOm-0j-0CU" secondAttribute="bottom" constant="105" id="LMW-xT-KQW"/>
+                            <constraint firstItem="t2a-05-vvW" firstAttribute="centerX" secondItem="vHu-LP-j1Y" secondAttribute="centerX" id="NKz-JE-Q1F"/>
+                            <constraint firstItem="DHx-bH-bly" firstAttribute="top" secondItem="8bH-3N-ROX" secondAttribute="bottom" constant="75" id="TMV-37-e8N"/>
+                            <constraint firstItem="t2a-05-vvW" firstAttribute="top" secondItem="URn-wb-Wtt" secondAttribute="bottom" constant="71" id="TeM-p9-dES"/>
+                            <constraint firstAttribute="trailing" secondItem="8bH-3N-ROX" secondAttribute="trailing" constant="30" id="aa6-WD-mcp"/>
+                            <constraint firstItem="Xn1-lK-lcg" firstAttribute="centerX" secondItem="vHu-LP-j1Y" secondAttribute="centerX" id="rr1-OG-0La"/>
+                            <constraint firstItem="8bH-3N-ROX" firstAttribute="leading" secondItem="vHu-LP-j1Y" secondAttribute="leading" constant="30" id="ssX-c8-g2D"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RwM-h5-Cnt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-620" y="141"/>
+        </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="VKAuthViewController" customModule="VKAuth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Lc-O9-VsR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9Lc-O9-VsR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="72W-Sb-fJD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9Lc-O9-VsR" secondAttribute="bottom" id="7yD-qy-gqd"/>
+                            <constraint firstItem="9Lc-O9-VsR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="fU3-OR-Seu"/>
+                            <constraint firstAttribute="trailing" secondItem="9Lc-O9-VsR" secondAttribute="trailing" id="tH0-jR-hvR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="9Lc-O9-VsR" id="XQa-Yl-7Zy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="vk_logo" width="1080" height="1080"/>
+    </resources>
+</document>
