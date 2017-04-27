@@ -30,8 +30,10 @@ class OAuthInteractor: Interactor<OAuthViewController> {
                                     guard let _ = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
                                         return
                                     }
-                                    self.viewController?.router.presentFeedViewController()
                                     
+                                    DispatchQueue.main.async {
+                                        self.viewController?.router.presentFeedViewController()
+                                    }
         }).resume()
     }
     

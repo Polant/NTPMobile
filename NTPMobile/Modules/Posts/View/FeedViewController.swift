@@ -10,7 +10,14 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
+    // MARK: - Outlets
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Properties
+    
+    var interactor: FeedInteractor!
+    var router: FeedRouter!
     
     var posts: [Post]? {
         didSet {
@@ -18,18 +25,24 @@ class FeedViewController: UIViewController {
         }
     }
     
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         ServiceManager.shared.loadPosts(for: "iphone", offset: 0, count: 50) { posts in
             self.posts = posts
         }
     }
     
+    // MARK: - Datasource
+    
     func post(at indexPath: IndexPath) -> Post? {
         return posts?[indexPath.row]
     }
 }
+
+// MARK: - UITableViewDataSource
 
 extension FeedViewController: UITableViewDataSource {
     

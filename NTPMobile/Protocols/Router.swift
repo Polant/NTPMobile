@@ -17,6 +17,8 @@ class Router <T: UIViewController> {
         self.viewController = viewController
     }
     
+    class func injectModule(in view: T) {
+    }
     
     //MARK: - Actions
     

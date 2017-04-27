@@ -11,6 +11,7 @@ import UIKit
 enum Storyboard: String {
     case login = "Login"
     case oAuth = "OAuth"
+    case menu = "Menu"
     case content = "Content"
     
     func instantiate() -> UIStoryboard {

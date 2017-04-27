@@ -10,12 +10,41 @@ import UIKit
 
 class OAuthRouter: Router<OAuthViewController> {
     
+    // MARK: - Injection
+    
+    override class func injectModule(in view: OAuthViewController) {
+        super.injectModule(in: view)
+        view.interactor = OAuthInteractor(viewController: view)
+        view.router = OAuthRouter(viewController: view)
+    }
+    
     // MARK: - Routes
     
     func presentFeedViewController() {
-        let vc = Storyboard.content.instantiate().instantiateInitialViewController()
-        self.viewController?.navigationController?.pushViewController(vc!, animated: true)
-        print("pushed")
+        
+        // Container
+        let container = Storyboard.menu
+            .instantiate()
+            .instantiateViewController(withIdentifier: "MenuContainerViewController") as! MenuContainerViewController
+    
+        // Side menu
+        let sideMenuViewController = Storyboard.menu
+            .instantiate()
+            .instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
+        
+        // Navigation
+        let contentNavigationController = Storyboard.content
+            .instantiate()
+            .instantiateInitialViewController() as! UINavigationController
+        
+        // Setup VIPER
+        let feedViewController = contentNavigationController.topViewController as! FeedViewController
+        FeedRouter.injectModule(in: feedViewController)
+        
+        container.setCentral(viewController: contentNavigationController)
+        container.setLeft(viewController: sideMenuViewController)
+        
+        self.viewController?.present(container, animated: true)
     }
     
     // MARK: - Segue

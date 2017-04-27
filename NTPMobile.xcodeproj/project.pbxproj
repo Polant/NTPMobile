@@ -27,7 +27,6 @@
 		142684E21EB2681C00EDDCE9 /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684C81EB2681C00EDDCE9 /* RegistrationInteractor.swift */; };
 		142684E31EB2681C00EDDCE9 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684CA1EB2681C00EDDCE9 /* RegistrationRouter.swift */; };
 		142684E41EB2681C00EDDCE9 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684CC1EB2681C00EDDCE9 /* RegistrationViewController.swift */; };
-		142684E51EB2681C00EDDCE9 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684CE1EB2681C00EDDCE9 /* FeedViewController.swift */; };
 		142684E61EB2681C00EDDCE9 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684D01EB2681C00EDDCE9 /* Interactor.swift */; };
 		142684E71EB2681C00EDDCE9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684D11EB2681C00EDDCE9 /* Router.swift */; };
 		142684E81EB2681C00EDDCE9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684D31EB2681C00EDDCE9 /* Constants.swift */; };
@@ -43,6 +42,13 @@
 		142685091EB270BF00EDDCE9 /* ObjcException.m in Sources */ = {isa = PBXBuildFile; fileRef = 142685081EB270BF00EDDCE9 /* ObjcException.m */; };
 		1426850B1EB2731A00EDDCE9 /* OAuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426850A1EB2731A00EDDCE9 /* OAuthInteractor.swift */; };
 		1426850F1EB2742E00EDDCE9 /* OAuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426850E1EB2742E00EDDCE9 /* OAuthRouter.swift */; };
+		142685131EB2853700EDDCE9 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142685111EB2853700EDDCE9 /* Menu.storyboard */; };
+		142685151EB2865E00EDDCE9 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685141EB2865E00EDDCE9 /* SideMenuViewController.swift */; };
+		142685191EB2887300EDDCE9 /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685181EB2887300EDDCE9 /* UIViewController+Storyboard.swift */; };
+		1426851B1EB28B8800EDDCE9 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426851A1EB28B8800EDDCE9 /* NavigationController.swift */; };
+		1426851F1EB28E1800EDDCE9 /* FeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426851E1EB28E1800EDDCE9 /* FeedInteractor.swift */; };
+		142685211EB28E3900EDDCE9 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685201EB28E3900EDDCE9 /* FeedViewController.swift */; };
+		142685241EB28E5100EDDCE9 /* FeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685231EB28E5100EDDCE9 /* FeedRouter.swift */; };
 		3E8154B305985CDE06D65C41 /* Pods_NTPMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +75,6 @@
 		142684C81EB2681C00EDDCE9 /* RegistrationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
 		142684CA1EB2681C00EDDCE9 /* RegistrationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 		142684CC1EB2681C00EDDCE9 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		142684CE1EB2681C00EDDCE9 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		142684D01EB2681C00EDDCE9 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		142684D11EB2681C00EDDCE9 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		142684D31EB2681C00EDDCE9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -87,6 +92,13 @@
 		142685081EB270BF00EDDCE9 /* ObjcException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjcException.m; sourceTree = "<group>"; };
 		1426850A1EB2731A00EDDCE9 /* OAuthInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthInteractor.swift; sourceTree = "<group>"; };
 		1426850E1EB2742E00EDDCE9 /* OAuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthRouter.swift; sourceTree = "<group>"; };
+		142685121EB2853700EDDCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
+		142685141EB2865E00EDDCE9 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuViewController.swift; path = Menu/View/SideMenuViewController.swift; sourceTree = "<group>"; };
+		142685181EB2887300EDDCE9 /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
+		1426851A1EB28B8800EDDCE9 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = Navigation/NavigationController.swift; sourceTree = "<group>"; };
+		1426851E1EB28E1800EDDCE9 /* FeedInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedInteractor.swift; path = Logic/FeedInteractor.swift; sourceTree = "<group>"; };
+		142685201EB28E3900EDDCE9 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = View/FeedViewController.swift; sourceTree = "<group>"; };
+		142685231EB28E5100EDDCE9 /* FeedRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedRouter.swift; path = Route/FeedRouter.swift; sourceTree = "<group>"; };
 		7D0764A3EAAC9B95AF2380D1 /* Pods-NTPMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		AFE2E78804CD9334DE7FE0BC /* Pods-NTPMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.release.xcconfig"; sourceTree = "<group>"; };
 		CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NTPMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +155,7 @@
 			children = (
 				142684A41EB267AB00EDDCE9 /* Login.storyboard */,
 				142684A61EB267AB00EDDCE9 /* OAuth.storyboard */,
+				142685111EB2853700EDDCE9 /* Menu.storyboard */,
 				142684A81EB267AB00EDDCE9 /* Content.storyboard */,
 				1426849B1EB266C000EDDCE9 /* LaunchScreen.storyboard */,
 			);
@@ -173,6 +186,7 @@
 		142684BA1EB2681C00EDDCE9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				142685161EB2866300EDDCE9 /* Menu */,
 				142684F01EB26D8300EDDCE9 /* Container */,
 				142684BB1EB2681C00EDDCE9 /* Auth */,
 				142684CD1EB2681C00EDDCE9 /* Posts */,
@@ -271,7 +285,9 @@
 		142684CD1EB2681C00EDDCE9 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
-				142684CE1EB2681C00EDDCE9 /* FeedViewController.swift */,
+				142685221EB28E3C00EDDCE9 /* Logic */,
+				142685251EB28E5400EDDCE9 /* Route */,
+				1426851D1EB28DED00EDDCE9 /* View */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -293,6 +309,7 @@
 				142685081EB270BF00EDDCE9 /* ObjcException.m */,
 				142684D31EB2681C00EDDCE9 /* Constants.swift */,
 				142684D41EB2681C00EDDCE9 /* UIColor+Hex.swift */,
+				142685181EB2887300EDDCE9 /* UIViewController+Storyboard.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -312,6 +329,7 @@
 			children = (
 				142684FA1EB26D8B00EDDCE9 /* Container */,
 				142684FE1EB26D8B00EDDCE9 /* Extensions */,
+				1426851C1EB28B8D00EDDCE9 /* Navigation */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -356,6 +374,55 @@
 			isa = PBXGroup;
 			children = (
 				1426850E1EB2742E00EDDCE9 /* OAuthRouter.swift */,
+			);
+			name = Route;
+			sourceTree = "<group>";
+		};
+		142685161EB2866300EDDCE9 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				142685171EB2866A00EDDCE9 /* View */,
+			);
+			name = Menu;
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		142685171EB2866A00EDDCE9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				142685141EB2865E00EDDCE9 /* SideMenuViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1426851C1EB28B8D00EDDCE9 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				1426851A1EB28B8800EDDCE9 /* NavigationController.swift */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		1426851D1EB28DED00EDDCE9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				142685201EB28E3900EDDCE9 /* FeedViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		142685221EB28E3C00EDDCE9 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				1426851E1EB28E1800EDDCE9 /* FeedInteractor.swift */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		142685251EB28E5400EDDCE9 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				142685231EB28E5100EDDCE9 /* FeedRouter.swift */,
 			);
 			name = Route;
 			sourceTree = "<group>";
@@ -443,6 +510,7 @@
 				142684AB1EB267AB00EDDCE9 /* OAuth.storyboard in Resources */,
 				142684AC1EB267AB00EDDCE9 /* Content.storyboard in Resources */,
 				1426849D1EB266C000EDDCE9 /* LaunchScreen.storyboard in Resources */,
+				142685131EB2853700EDDCE9 /* Menu.storyboard in Resources */,
 				1426849A1EB266C000EDDCE9 /* Assets.xcassets in Resources */,
 				142684AA1EB267AB00EDDCE9 /* Login.storyboard in Resources */,
 			);
@@ -508,17 +576,20 @@
 				142684E11EB2681C00EDDCE9 /* VKAuthViewController.swift in Sources */,
 				142684F71EB26D8300EDDCE9 /* MenuContainerRouter.swift in Sources */,
 				1426850B1EB2731A00EDDCE9 /* OAuthInteractor.swift in Sources */,
-				142684E51EB2681C00EDDCE9 /* FeedViewController.swift in Sources */,
+				1426851B1EB28B8800EDDCE9 /* NavigationController.swift in Sources */,
+				142685191EB2887300EDDCE9 /* UIViewController+Storyboard.swift in Sources */,
 				142685011EB26D8B00EDDCE9 /* ContainerSegue.swift in Sources */,
 				142684D51EB2681C00EDDCE9 /* AppDelegate.swift in Sources */,
 				142685031EB26D8B00EDDCE9 /* ContainerViewController.swift in Sources */,
 				142685041EB26D8B00EDDCE9 /* Constraints.swift in Sources */,
 				142684D91EB2681C00EDDCE9 /* KeyboardManager.swift in Sources */,
+				142685241EB28E5100EDDCE9 /* FeedRouter.swift in Sources */,
 				142684DA1EB2681C00EDDCE9 /* Post.swift in Sources */,
 				142684E71EB2681C00EDDCE9 /* Router.swift in Sources */,
 				142685021EB26D8B00EDDCE9 /* ContainerView.swift in Sources */,
 				1426850F1EB2742E00EDDCE9 /* OAuthRouter.swift in Sources */,
 				142684F81EB26D8300EDDCE9 /* MenuContainerViewController.swift in Sources */,
+				142685151EB2865E00EDDCE9 /* SideMenuViewController.swift in Sources */,
 				142684DC1EB2681C00EDDCE9 /* Storyboard.swift in Sources */,
 				142684F51EB26D8300EDDCE9 /* MenuContainerInteractor.swift in Sources */,
 				142684E01EB2681C00EDDCE9 /* OAuthViewController.swift in Sources */,
@@ -528,9 +599,11 @@
 				142684E61EB2681C00EDDCE9 /* Interactor.swift in Sources */,
 				142684DE1EB2681C00EDDCE9 /* LoginRouter.swift in Sources */,
 				142684E81EB2681C00EDDCE9 /* Constants.swift in Sources */,
+				142685211EB28E3900EDDCE9 /* FeedViewController.swift in Sources */,
 				142684E21EB2681C00EDDCE9 /* RegistrationInteractor.swift in Sources */,
 				142684DD1EB2681C00EDDCE9 /* LoginInteractor.swift in Sources */,
 				142685091EB270BF00EDDCE9 /* ObjcException.m in Sources */,
+				1426851F1EB28E1800EDDCE9 /* FeedInteractor.swift in Sources */,
 				142684DF1EB2681C00EDDCE9 /* LoginViewController.swift in Sources */,
 				142684E31EB2681C00EDDCE9 /* RegistrationRouter.swift in Sources */,
 				142685051EB26D8B00EDDCE9 /* Views.swift in Sources */,
@@ -570,6 +643,14 @@
 				142684A91EB267AB00EDDCE9 /* Base */,
 			);
 			name = Content.storyboard;
+			sourceTree = "<group>";
+		};
+		142685111EB2853700EDDCE9 /* Menu.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				142685121EB2853700EDDCE9 /* Base */,
+			);
+			name = Menu.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

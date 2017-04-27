@@ -22,8 +22,7 @@ class LoginRouter: Router<LoginViewController> {
         let storyboard = Storyboard.oAuth.instantiate()
         
         let oauthVC = storyboard.instantiateInitialViewController() as! OAuthViewController
-        oauthVC.interactor = OAuthInteractor(viewController: oauthVC)
-        oauthVC.router = OAuthRouter(viewController: oauthVC)
+        OAuthRouter.injectModule(in: oauthVC)
         
         viewController?.navigationController?.pushViewController(oauthVC, animated: true)
     }
