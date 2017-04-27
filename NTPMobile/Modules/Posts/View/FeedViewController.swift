@@ -29,7 +29,7 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
         ServiceManager.shared.loadPosts(forAppWithId: Constants.appID, offset: 0, count: 50) { posts in
             self.posts = posts
         }
@@ -52,15 +52,30 @@ extension FeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell")
+        // FIXME: make dispatcher for cells
         
-        guard let post = self.post(at: indexPath) else {
-            return cell!
+        let post = self.post(at: indexPath)
+        
+        if let _ = post?.photoUrl {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "postCellWithImage") as! PostImageTableViewCell
+            cell.setup(with: post!)
+            return cell
+            
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as! PostTextTableViewCell
+            cell.setup(with: post!)
+            return cell
         }
         
-        cell?.textLabel?.text = post.text
-        cell?.detailTextLabel?.text = "\(post.timestamp)"
-        
-        return cell!
+    }
+}
+
+extension FeedViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let post = self.post(at: indexPath), post.photoUrl == nil {
+            return 44
+        }
+        return UITableViewAutomaticDimension
     }
 }

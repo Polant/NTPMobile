@@ -3,6 +3,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'NTPMobile' do
+    pod 'SDWebImage', '~> 3.8'
 	pod 'PKHUD', '~> 4.0'
     pod 'Alamofire', '~> 4.0'
 end

@@ -50,6 +50,8 @@
 		142685211EB28E3900EDDCE9 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685201EB28E3900EDDCE9 /* FeedViewController.swift */; };
 		142685241EB28E5100EDDCE9 /* FeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685231EB28E5100EDDCE9 /* FeedRouter.swift */; };
 		142685271EB2984E00EDDCE9 /* LocalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685261EB2984E00EDDCE9 /* LocalUser.swift */; };
+		1426852B1EB2B49F00EDDCE9 /* PostImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426852A1EB2B49F00EDDCE9 /* PostImageTableViewCell.swift */; };
+		1426852E1EB2B91F00EDDCE9 /* PostTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426852D1EB2B91F00EDDCE9 /* PostTextTableViewCell.swift */; };
 		3E8154B305985CDE06D65C41 /* Pods_NTPMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +103,8 @@
 		142685201EB28E3900EDDCE9 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = View/FeedViewController.swift; sourceTree = "<group>"; };
 		142685231EB28E5100EDDCE9 /* FeedRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedRouter.swift; path = Route/FeedRouter.swift; sourceTree = "<group>"; };
 		142685261EB2984E00EDDCE9 /* LocalUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalUser.swift; sourceTree = "<group>"; };
+		1426852A1EB2B49F00EDDCE9 /* PostImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostImageTableViewCell.swift; path = Cells/PostImageTableViewCell.swift; sourceTree = "<group>"; };
+		1426852D1EB2B91F00EDDCE9 /* PostTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostTextTableViewCell.swift; path = Cells/PostTextTableViewCell.swift; sourceTree = "<group>"; };
 		7D0764A3EAAC9B95AF2380D1 /* Pods-NTPMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		AFE2E78804CD9334DE7FE0BC /* Pods-NTPMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.release.xcconfig"; sourceTree = "<group>"; };
 		CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NTPMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -331,6 +335,7 @@
 				142684FA1EB26D8B00EDDCE9 /* Container */,
 				142684FE1EB26D8B00EDDCE9 /* Extensions */,
 				1426851C1EB28B8D00EDDCE9 /* Navigation */,
+				1426852C1EB2B4A200EDDCE9 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -444,6 +449,15 @@
 				142685261EB2984E00EDDCE9 /* LocalUser.swift */,
 			);
 			name = Entity;
+			sourceTree = "<group>";
+		};
+		1426852C1EB2B4A200EDDCE9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1426852A1EB2B49F00EDDCE9 /* PostImageTableViewCell.swift */,
+				1426852D1EB2B91F00EDDCE9 /* PostTextTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		188DA02B3541745EE5D04982 /* Pods */ = {
@@ -592,9 +606,11 @@
 			files = (
 				142684E91EB2681C00EDDCE9 /* UIColor+Hex.swift in Sources */,
 				142684D61EB2681C00EDDCE9 /* RootRouter.swift in Sources */,
+				1426852E1EB2B91F00EDDCE9 /* PostTextTableViewCell.swift in Sources */,
 				142684E11EB2681C00EDDCE9 /* VKAuthViewController.swift in Sources */,
 				142684F71EB26D8300EDDCE9 /* MenuContainerRouter.swift in Sources */,
 				1426850B1EB2731A00EDDCE9 /* OAuthInteractor.swift in Sources */,
+				1426852B1EB2B49F00EDDCE9 /* PostImageTableViewCell.swift in Sources */,
 				1426851B1EB28B8800EDDCE9 /* NavigationController.swift in Sources */,
 				142685191EB2887300EDDCE9 /* UIViewController+Storyboard.swift in Sources */,
 				142685011EB26D8B00EDDCE9 /* ContainerSegue.swift in Sources */,
