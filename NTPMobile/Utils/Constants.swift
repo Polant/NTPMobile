@@ -10,4 +10,5 @@ import Foundation
 
 struct Constants {
     static let baseApiServicePath = "http://localhost:8089/mobile"
+    static let appID = 8
 }

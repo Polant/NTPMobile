@@ -85,13 +85,13 @@ class ServiceManager {
     }
     
     
-    func loadPosts(for group: String, offset: Int, count: Int, completion: @escaping ([Post]) -> Void) {
+    func loadPosts(forAppWithId appId: Int, offset: Int, count: Int, completion: @escaping ([Post]) -> Void) {
         guard let user = localUser else {
             completion([])
             return
         }
         
-        let request = PostRouter.loadPosts(group: group,
+        let request = PostRouter.loadPosts(appId: appId,
                                            offset: offset,
                                            count: count,
                                            userId: user.id,
@@ -122,6 +122,7 @@ class ServiceManager {
 
 
 //MARK: - Auth Routing
+
 enum AuthRouter: URLRequestConvertible {
     
     private static let baseURLString = "\(Constants.baseApiServicePath)/auth"
@@ -171,7 +172,7 @@ enum PostRouter: URLRequestConvertible {
     
     private static let baseURLString = "\(Constants.baseApiServicePath)/posts"
     
-    case loadPosts(group: String, offset: Int, count: Int, userId: Int, tokenString: String)
+    case loadPosts(appId: Int, offset: Int, count: Int, userId: Int, tokenString: String)
     
     private var method: HTTPMethod {
         return .post
@@ -192,10 +193,10 @@ enum PostRouter: URLRequestConvertible {
         urlRequest.httpMethod = method.rawValue
         
         switch self {
-        case let .loadPosts(group, offset, count, userId, tokenString):
+        case let .loadPosts(appId, offset, count, userId, tokenString):
             let params: [String : Any] = [
                 "token": tokenString,
-                "group_domain": group,
+                "app_id": appId,
                 "offset": offset,
                 "count": count,
                 "user_id": userId

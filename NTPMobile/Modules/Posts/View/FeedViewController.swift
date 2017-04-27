@@ -30,7 +30,7 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ServiceManager.shared.loadPosts(for: "iphone", offset: 0, count: 50) { posts in
+        ServiceManager.shared.loadPosts(forAppWithId: Constants.appID, offset: 0, count: 50) { posts in
             self.posts = posts
         }
     }
