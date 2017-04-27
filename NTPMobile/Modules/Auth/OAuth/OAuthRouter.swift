@@ -13,8 +13,9 @@ class OAuthRouter: Router<OAuthViewController> {
     // MARK: - Routes
     
     func presentFeedViewController() {
-        let vc = Storyboard.posts.instantiate().instantiateInitialViewController()
+        let vc = Storyboard.content.instantiate().instantiateInitialViewController()
         self.viewController?.navigationController?.pushViewController(vc!, animated: true)
+        print("pushed")
     }
     
     // MARK: - Segue

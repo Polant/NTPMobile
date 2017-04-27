@@ -31,8 +31,7 @@ class OAuthViewController: UIViewController {
 extension OAuthViewController: VKAuthViewControllerDelegate {
     
     func vkAuthViewController(_ vc: VKAuthViewController, didRecieveAuthCode code: String, redirectURI: String) {
-        self.navigationController?.popViewController(animated: true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        vc.dismiss(animated: true) { 
             self.interactor.send(code: code, redirectURI: redirectURI)
         }
     }

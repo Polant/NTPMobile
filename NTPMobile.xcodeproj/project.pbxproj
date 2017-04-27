@@ -11,7 +11,7 @@
 		1426849D1EB266C000EDDCE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1426849B1EB266C000EDDCE9 /* LaunchScreen.storyboard */; };
 		142684AA1EB267AB00EDDCE9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142684A41EB267AB00EDDCE9 /* Login.storyboard */; };
 		142684AB1EB267AB00EDDCE9 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142684A61EB267AB00EDDCE9 /* OAuth.storyboard */; };
-		142684AC1EB267AB00EDDCE9 /* Posts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142684A81EB267AB00EDDCE9 /* Posts.storyboard */; };
+		142684AC1EB267AB00EDDCE9 /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142684A81EB267AB00EDDCE9 /* Content.storyboard */; };
 		142684D51EB2681C00EDDCE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684B01EB2681C00EDDCE9 /* AppDelegate.swift */; };
 		142684D61EB2681C00EDDCE9 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684B11EB2681C00EDDCE9 /* RootRouter.swift */; };
 		142684D81EB2681C00EDDCE9 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684B51EB2681C00EDDCE9 /* AccessToken.swift */; };
@@ -53,7 +53,7 @@
 		1426849E1EB266C000EDDCE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		142684A51EB267AB00EDDCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		142684A71EB267AB00EDDCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OAuth.storyboard; sourceTree = "<group>"; };
-		142684A91EB267AB00EDDCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Posts.storyboard; sourceTree = "<group>"; };
+		142684A91EB267AB00EDDCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Content.storyboard; sourceTree = "<group>"; };
 		142684B01EB2681C00EDDCE9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		142684B11EB2681C00EDDCE9 /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		142684B51EB2681C00EDDCE9 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 			children = (
 				142684A41EB267AB00EDDCE9 /* Login.storyboard */,
 				142684A61EB267AB00EDDCE9 /* OAuth.storyboard */,
-				142684A81EB267AB00EDDCE9 /* Posts.storyboard */,
+				142684A81EB267AB00EDDCE9 /* Content.storyboard */,
 				1426849B1EB266C000EDDCE9 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
@@ -441,7 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				142684AB1EB267AB00EDDCE9 /* OAuth.storyboard in Resources */,
-				142684AC1EB267AB00EDDCE9 /* Posts.storyboard in Resources */,
+				142684AC1EB267AB00EDDCE9 /* Content.storyboard in Resources */,
 				1426849D1EB266C000EDDCE9 /* LaunchScreen.storyboard in Resources */,
 				1426849A1EB266C000EDDCE9 /* Assets.xcassets in Resources */,
 				142684AA1EB267AB00EDDCE9 /* Login.storyboard in Resources */,
@@ -564,12 +564,12 @@
 			name = OAuth.storyboard;
 			sourceTree = "<group>";
 		};
-		142684A81EB267AB00EDDCE9 /* Posts.storyboard */ = {
+		142684A81EB267AB00EDDCE9 /* Content.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				142684A91EB267AB00EDDCE9 /* Base */,
 			);
-			name = Posts.storyboard;
+			name = Content.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
