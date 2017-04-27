@@ -91,18 +91,31 @@ class ServiceManager {
             return
         }
         
+        let request = PostRouter.loadPosts(group: group,
+                                           offset: offset,
+                                           count: count,
+                                           userId: user.id,
+                                           tokenString: user.token.tokenString)
+        
         Alamofire
-            .request(PostRouter.loadPosts(group: group, offset: offset, count: count, userId: user.id))
+            .request(request)
             .responseJSON { (dataResponse) in
                 
                 guard let response = dataResponse.result.value as? [String: Any] else {
                     completion([])
                     return
                 }
-                let jsonPosts = response["posts"] as! [[String: Any]]
-                let posts = jsonPosts.map { Post(with: $0) }
                 
-                completion(posts)
+                let success = !(response["error"] as! Bool)
+                if success {
+                    let jsonPosts = response["posts"] as! [[String: Any]]
+                    let posts = jsonPosts.map { Post(with: $0) }
+                    completion(posts)
+                } else {
+                    debugPrint(response)
+                    completion([])
+                }
+                
         }
     }
 }
@@ -152,12 +165,13 @@ enum AuthRouter: URLRequestConvertible {
     }
 }
 
+// MARK: - Feed Routing
 
 enum PostRouter: URLRequestConvertible {
     
     private static let baseURLString = "\(Constants.baseApiServicePath)/posts"
     
-    case loadPosts(group: String, offset: Int, count: Int, userId: Int)
+    case loadPosts(group: String, offset: Int, count: Int, userId: Int, tokenString: String)
     
     private var method: HTTPMethod {
         return .post
@@ -178,8 +192,14 @@ enum PostRouter: URLRequestConvertible {
         urlRequest.httpMethod = method.rawValue
         
         switch self {
-        case let .loadPosts(group, offset, count, userId):
-            let params = ["group_domain": group, "offset": offset, "count": count, "user_id": userId] as [String : Any]
+        case let .loadPosts(group, offset, count, userId, tokenString):
+            let params: [String : Any] = [
+                "token": tokenString,
+                "group_domain": group,
+                "offset": offset,
+                "count": count,
+                "user_id": userId
+            ]
             urlRequest = try URLEncoding.default.encode(urlRequest, with:params)
         }
         return urlRequest
