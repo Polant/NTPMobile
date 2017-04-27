@@ -22,16 +22,27 @@
 		142684DD1EB2681C00EDDCE9 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684BE1EB2681C00EDDCE9 /* LoginInteractor.swift */; };
 		142684DE1EB2681C00EDDCE9 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684C01EB2681C00EDDCE9 /* LoginRouter.swift */; };
 		142684DF1EB2681C00EDDCE9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684C21EB2681C00EDDCE9 /* LoginViewController.swift */; };
-		142684E01EB2681C00EDDCE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684C41EB2681C00EDDCE9 /* ViewController.swift */; };
+		142684E01EB2681C00EDDCE9 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684C41EB2681C00EDDCE9 /* OAuthViewController.swift */; };
 		142684E11EB2681C00EDDCE9 /* VKAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684C51EB2681C00EDDCE9 /* VKAuthViewController.swift */; };
 		142684E21EB2681C00EDDCE9 /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684C81EB2681C00EDDCE9 /* RegistrationInteractor.swift */; };
 		142684E31EB2681C00EDDCE9 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684CA1EB2681C00EDDCE9 /* RegistrationRouter.swift */; };
 		142684E41EB2681C00EDDCE9 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684CC1EB2681C00EDDCE9 /* RegistrationViewController.swift */; };
-		142684E51EB2681C00EDDCE9 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684CE1EB2681C00EDDCE9 /* PostsViewController.swift */; };
+		142684E51EB2681C00EDDCE9 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684CE1EB2681C00EDDCE9 /* FeedViewController.swift */; };
 		142684E61EB2681C00EDDCE9 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684D01EB2681C00EDDCE9 /* Interactor.swift */; };
 		142684E71EB2681C00EDDCE9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684D11EB2681C00EDDCE9 /* Router.swift */; };
 		142684E81EB2681C00EDDCE9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684D31EB2681C00EDDCE9 /* Constants.swift */; };
 		142684E91EB2681C00EDDCE9 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684D41EB2681C00EDDCE9 /* UIColor+Hex.swift */; };
+		142684F51EB26D8300EDDCE9 /* MenuContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684F11EB26D8300EDDCE9 /* MenuContainerInteractor.swift */; };
+		142684F71EB26D8300EDDCE9 /* MenuContainerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684F31EB26D8300EDDCE9 /* MenuContainerRouter.swift */; };
+		142684F81EB26D8300EDDCE9 /* MenuContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684F41EB26D8300EDDCE9 /* MenuContainerViewController.swift */; };
+		142685011EB26D8B00EDDCE9 /* ContainerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684FB1EB26D8B00EDDCE9 /* ContainerSegue.swift */; };
+		142685021EB26D8B00EDDCE9 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684FC1EB26D8B00EDDCE9 /* ContainerView.swift */; };
+		142685031EB26D8B00EDDCE9 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684FD1EB26D8B00EDDCE9 /* ContainerViewController.swift */; };
+		142685041EB26D8B00EDDCE9 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684FF1EB26D8B00EDDCE9 /* Constraints.swift */; };
+		142685051EB26D8B00EDDCE9 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685001EB26D8B00EDDCE9 /* Views.swift */; };
+		142685091EB270BF00EDDCE9 /* ObjcException.m in Sources */ = {isa = PBXBuildFile; fileRef = 142685081EB270BF00EDDCE9 /* ObjcException.m */; };
+		1426850B1EB2731A00EDDCE9 /* OAuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426850A1EB2731A00EDDCE9 /* OAuthInteractor.swift */; };
+		1426850F1EB2742E00EDDCE9 /* OAuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426850E1EB2742E00EDDCE9 /* OAuthRouter.swift */; };
 		3E8154B305985CDE06D65C41 /* Pods_NTPMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,16 +64,29 @@
 		142684BE1EB2681C00EDDCE9 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		142684C01EB2681C00EDDCE9 /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		142684C21EB2681C00EDDCE9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		142684C41EB2681C00EDDCE9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		142684C41EB2681C00EDDCE9 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		142684C51EB2681C00EDDCE9 /* VKAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKAuthViewController.swift; sourceTree = "<group>"; };
 		142684C81EB2681C00EDDCE9 /* RegistrationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
 		142684CA1EB2681C00EDDCE9 /* RegistrationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 		142684CC1EB2681C00EDDCE9 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		142684CE1EB2681C00EDDCE9 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		142684CE1EB2681C00EDDCE9 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		142684D01EB2681C00EDDCE9 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		142684D11EB2681C00EDDCE9 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		142684D31EB2681C00EDDCE9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		142684D41EB2681C00EDDCE9 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		142684F11EB26D8300EDDCE9 /* MenuContainerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContainerInteractor.swift; sourceTree = "<group>"; };
+		142684F31EB26D8300EDDCE9 /* MenuContainerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContainerRouter.swift; sourceTree = "<group>"; };
+		142684F41EB26D8300EDDCE9 /* MenuContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContainerViewController.swift; sourceTree = "<group>"; };
+		142684FB1EB26D8B00EDDCE9 /* ContainerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerSegue.swift; sourceTree = "<group>"; };
+		142684FC1EB26D8B00EDDCE9 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		142684FD1EB26D8B00EDDCE9 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		142684FF1EB26D8B00EDDCE9 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		142685001EB26D8B00EDDCE9 /* Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		142685061EB270BF00EDDCE9 /* NTPMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NTPMobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		142685071EB270BF00EDDCE9 /* ObjcException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjcException.h; sourceTree = "<group>"; };
+		142685081EB270BF00EDDCE9 /* ObjcException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjcException.m; sourceTree = "<group>"; };
+		1426850A1EB2731A00EDDCE9 /* OAuthInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthInteractor.swift; sourceTree = "<group>"; };
+		1426850E1EB2742E00EDDCE9 /* OAuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthRouter.swift; sourceTree = "<group>"; };
 		7D0764A3EAAC9B95AF2380D1 /* Pods-NTPMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		AFE2E78804CD9334DE7FE0BC /* Pods-NTPMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.release.xcconfig"; sourceTree = "<group>"; };
 		CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NTPMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +130,7 @@
 				142684D21EB2681C00EDDCE9 /* Utils */,
 				142684B41EB2681C00EDDCE9 /* Models */,
 				142684BA1EB2681C00EDDCE9 /* Modules */,
+				142684F91EB26D8B00EDDCE9 /* Views */,
 				142684AD1EB267B300EDDCE9 /* Storyboards */,
 				142684991EB266C000EDDCE9 /* Assets.xcassets */,
 				1426849E1EB266C000EDDCE9 /* Info.plist */,
@@ -148,6 +173,7 @@
 		142684BA1EB2681C00EDDCE9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				142684F01EB26D8300EDDCE9 /* Container */,
 				142684BB1EB2681C00EDDCE9 /* Auth */,
 				142684CD1EB2681C00EDDCE9 /* Posts */,
 			);
@@ -158,8 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				142684BC1EB2681C00EDDCE9 /* Login */,
-				142684C31EB2681C00EDDCE9 /* OAuth */,
 				142684C61EB2681C00EDDCE9 /* Registration */,
+				142684C31EB2681C00EDDCE9 /* OAuth */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -201,8 +227,9 @@
 		142684C31EB2681C00EDDCE9 /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
-				142684C41EB2681C00EDDCE9 /* ViewController.swift */,
-				142684C51EB2681C00EDDCE9 /* VKAuthViewController.swift */,
+				1426850D1EB2734200EDDCE9 /* Logic */,
+				142685101EB2743200EDDCE9 /* Route */,
+				1426850C1EB2732C00EDDCE9 /* View */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -244,7 +271,7 @@
 		142684CD1EB2681C00EDDCE9 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
-				142684CE1EB2681C00EDDCE9 /* PostsViewController.swift */,
+				142684CE1EB2681C00EDDCE9 /* FeedViewController.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -261,10 +288,76 @@
 		142684D21EB2681C00EDDCE9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				142685061EB270BF00EDDCE9 /* NTPMobile-Bridging-Header.h */,
+				142685071EB270BF00EDDCE9 /* ObjcException.h */,
+				142685081EB270BF00EDDCE9 /* ObjcException.m */,
 				142684D31EB2681C00EDDCE9 /* Constants.swift */,
 				142684D41EB2681C00EDDCE9 /* UIColor+Hex.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		142684F01EB26D8300EDDCE9 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				142684F41EB26D8300EDDCE9 /* MenuContainerViewController.swift */,
+				142684F11EB26D8300EDDCE9 /* MenuContainerInteractor.swift */,
+				142684F31EB26D8300EDDCE9 /* MenuContainerRouter.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		142684F91EB26D8B00EDDCE9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				142684FA1EB26D8B00EDDCE9 /* Container */,
+				142684FE1EB26D8B00EDDCE9 /* Extensions */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		142684FA1EB26D8B00EDDCE9 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				142684FB1EB26D8B00EDDCE9 /* ContainerSegue.swift */,
+				142684FC1EB26D8B00EDDCE9 /* ContainerView.swift */,
+				142684FD1EB26D8B00EDDCE9 /* ContainerViewController.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		142684FE1EB26D8B00EDDCE9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				142684FF1EB26D8B00EDDCE9 /* Constraints.swift */,
+				142685001EB26D8B00EDDCE9 /* Views.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1426850C1EB2732C00EDDCE9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				142684C41EB2681C00EDDCE9 /* OAuthViewController.swift */,
+				142684C51EB2681C00EDDCE9 /* VKAuthViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1426850D1EB2734200EDDCE9 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				1426850A1EB2731A00EDDCE9 /* OAuthInteractor.swift */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		142685101EB2743200EDDCE9 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				1426850E1EB2742E00EDDCE9 /* OAuthRouter.swift */,
+			);
+			name = Route;
 			sourceTree = "<group>";
 		};
 		188DA02B3541745EE5D04982 /* Pods */ = {
@@ -319,6 +412,7 @@
 				TargetAttributes = {
 					1426848E1EB266C000EDDCE9 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -412,13 +506,22 @@
 				142684E91EB2681C00EDDCE9 /* UIColor+Hex.swift in Sources */,
 				142684D61EB2681C00EDDCE9 /* RootRouter.swift in Sources */,
 				142684E11EB2681C00EDDCE9 /* VKAuthViewController.swift in Sources */,
-				142684E51EB2681C00EDDCE9 /* PostsViewController.swift in Sources */,
+				142684F71EB26D8300EDDCE9 /* MenuContainerRouter.swift in Sources */,
+				1426850B1EB2731A00EDDCE9 /* OAuthInteractor.swift in Sources */,
+				142684E51EB2681C00EDDCE9 /* FeedViewController.swift in Sources */,
+				142685011EB26D8B00EDDCE9 /* ContainerSegue.swift in Sources */,
 				142684D51EB2681C00EDDCE9 /* AppDelegate.swift in Sources */,
+				142685031EB26D8B00EDDCE9 /* ContainerViewController.swift in Sources */,
+				142685041EB26D8B00EDDCE9 /* Constraints.swift in Sources */,
 				142684D91EB2681C00EDDCE9 /* KeyboardManager.swift in Sources */,
 				142684DA1EB2681C00EDDCE9 /* Post.swift in Sources */,
 				142684E71EB2681C00EDDCE9 /* Router.swift in Sources */,
+				142685021EB26D8B00EDDCE9 /* ContainerView.swift in Sources */,
+				1426850F1EB2742E00EDDCE9 /* OAuthRouter.swift in Sources */,
+				142684F81EB26D8300EDDCE9 /* MenuContainerViewController.swift in Sources */,
 				142684DC1EB2681C00EDDCE9 /* Storyboard.swift in Sources */,
-				142684E01EB2681C00EDDCE9 /* ViewController.swift in Sources */,
+				142684F51EB26D8300EDDCE9 /* MenuContainerInteractor.swift in Sources */,
+				142684E01EB2681C00EDDCE9 /* OAuthViewController.swift in Sources */,
 				142684DB1EB2681C00EDDCE9 /* ServiceManager.swift in Sources */,
 				142684D81EB2681C00EDDCE9 /* AccessToken.swift in Sources */,
 				142684E41EB2681C00EDDCE9 /* RegistrationViewController.swift in Sources */,
@@ -427,8 +530,10 @@
 				142684E81EB2681C00EDDCE9 /* Constants.swift in Sources */,
 				142684E21EB2681C00EDDCE9 /* RegistrationInteractor.swift in Sources */,
 				142684DD1EB2681C00EDDCE9 /* LoginInteractor.swift in Sources */,
+				142685091EB270BF00EDDCE9 /* ObjcException.m in Sources */,
 				142684DF1EB2681C00EDDCE9 /* LoginViewController.swift in Sources */,
 				142684E31EB2681C00EDDCE9 /* RegistrationRouter.swift in Sources */,
+				142685051EB26D8B00EDDCE9 /* Views.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,11 +675,14 @@
 			baseConfigurationReference = 7D0764A3EAAC9B95AF2380D1 /* Pods-NTPMobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = NTPMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.poltoratskyi.NTPMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NTPMobile/Utils/NTPMobile-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -584,11 +692,13 @@
 			baseConfigurationReference = AFE2E78804CD9334DE7FE0BC /* Pods-NTPMobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = NTPMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.poltoratskyi.NTPMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NTPMobile/Utils/NTPMobile-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

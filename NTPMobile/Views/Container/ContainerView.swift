@@ -1,0 +1,53 @@
+//
+//  ContainerView.swift
+//  NTPiosUI
+//
+//  Created by Anton Poltoratskyi on 2/8/17.
+//  Copyright © 2017 Anton Poltoratskyi. All rights reserved.
+//
+
+import UIKit
+
+class ContainerView: UIView {
+    var viewController: UIViewController!
+    var filled: Bool {
+        return viewController != nil
+    }
+    
+    var active: Bool {
+        set {
+            newValue ? show() : hide()
+        }
+        get {
+            return !isHidden
+        }
+    }
+    
+    func embed(_ vc: UIViewController) {
+        if viewController != nil {
+            clear()
+        }
+        viewController = vc
+        vc.view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(vc.view)
+        
+        let constraints = NSLayoutConstraint.constraints(forBinding: vc.view, to: self)
+        NSLayoutConstraint.activate(constraints)
+        layoutIfNeeded()
+    }
+    
+    func clear() {
+        subviews.forEach { $0.removeFromSuperview() }
+        viewController?.removeFromParentViewController()
+        viewController?.didMove(toParentViewController: nil)
+        viewController = nil
+    }
+    
+    func show() {
+        isHidden = false
+    }
+    
+    func hide() {
+        isHidden = true
+    }
+}

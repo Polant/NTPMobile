@@ -11,36 +11,34 @@ import UIKit
 
 class LoginRouter: Router<LoginViewController> {
     
-    
-    //MARK: - Actions
+    // MARK: - Routes
     
     func presentRegistrationViewController() {
         viewController?.performSegue(withIdentifier: "showRegistration", sender: nil)
     }
     
     func presentOAuthViewController() {
+        
         let storyboard = Storyboard.oAuth.instantiate()
-        let initialVC = storyboard.instantiateInitialViewController()!
-//        viewController?.present(initialVC, animated: true, completion: nil)
-        viewController?.navigationController?.pushViewController(initialVC, animated: true)
+        
+        let oauthVC = storyboard.instantiateInitialViewController() as! OAuthViewController
+        oauthVC.interactor = OAuthInteractor(viewController: oauthVC)
+        oauthVC.router = OAuthRouter(viewController: oauthVC)
+        
+        viewController?.navigationController?.pushViewController(oauthVC, animated: true)
     }
     
-    
-    //MARK: - Segue
+    // MARK: - Segue
     
     func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard let identifier = segue.identifier else { return }
-        
+        guard let identifier = segue.identifier else {
+            return
+        }
         switch identifier {
-            
         case "showRegistration":
-            
             let vc = segue.destination as! RegistrationViewController
-            
             vc.interactor = RegistrationInteractor(viewController: vc)
             vc.router = RegistrationRouter(viewController: vc)
-            
         default:
             break
         }

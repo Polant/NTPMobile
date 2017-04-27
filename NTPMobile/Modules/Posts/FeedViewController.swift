@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostsViewController: UIViewController {
+class FeedViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,7 +31,7 @@ class PostsViewController: UIViewController {
     }
 }
 
-extension PostsViewController: UITableViewDataSource {
+extension FeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts?.count ?? 0

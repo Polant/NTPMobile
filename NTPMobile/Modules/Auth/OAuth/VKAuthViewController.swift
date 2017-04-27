@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct VKAuthCredentials {
+fileprivate struct VKAuthCredentials {
     
     static let clientId = 5948504
     
@@ -82,7 +82,7 @@ extension VKAuthViewController: UIWebViewDelegate {
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
-        guard request.isVKCodeRedirect, let url = request.url, let query = url.query else {
+        guard request.isCodeRedirect, let url = request.url, let query = url.query else {
             return true
         }
         
@@ -112,7 +112,7 @@ extension VKAuthViewController: UIWebViewDelegate {
 
 // MARK: - URLRequest
 extension URLRequest {
-    fileprivate var isVKCodeRedirect: Bool {
+    fileprivate var isCodeRedirect: Bool {
         return url?.scheme == VKAuthCredentials.redirectScheme
             && url?.host == VKAuthCredentials.redirectHost
             && url?.port == VKAuthCredentials.redirectPort
