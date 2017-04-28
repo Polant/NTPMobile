@@ -29,6 +29,7 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Feed"
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
         ServiceManager.shared.loadPosts(forAppWithId: Constants.appID, offset: 0, count: 50) { posts in
             self.posts = posts

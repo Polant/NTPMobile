@@ -47,7 +47,7 @@ public class MenuContainerViewController: ContainerViewController {
 extension MenuContainerViewController: SideMenuViewControllerDelegate {
     
     func sideMenuViewControllerDidSelectFeed(_ vc: SideMenuViewController) {
-        self.router.presentServiceViewController()
+        self.router.presentFeedViewController()
     }
     func sideMenuViewControllerDidSelectService(_ vc: SideMenuViewController) {
         self.router.presentServiceViewController()

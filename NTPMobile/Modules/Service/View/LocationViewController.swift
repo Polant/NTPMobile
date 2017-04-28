@@ -14,6 +14,7 @@ class ServiceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Services"
     }
 
 }
