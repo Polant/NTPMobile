@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,6 +21,41 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGO-Nj-BFj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="IbG-cc-Btr">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 2: Social Authorization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNp-Zh-a1k">
+                                        <rect key="frame" x="30" y="114.5" width="315" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm your social account credentials" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqZ-qi-FPJ">
+                                        <rect key="frame" x="30" y="170.5" width="315" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="KqZ-qi-FPJ" firstAttribute="leading" secondItem="bGO-Nj-BFj" secondAttribute="leading" constant="30" id="24s-to-h1X"/>
+                                    <constraint firstAttribute="trailing" secondItem="KqZ-qi-FPJ" secondAttribute="trailing" constant="30" id="8Kz-93-5Bg"/>
+                                    <constraint firstAttribute="trailing" secondItem="IbG-cc-Btr" secondAttribute="trailing" id="D9U-Gy-mcz"/>
+                                    <constraint firstAttribute="bottom" secondItem="IbG-cc-Btr" secondAttribute="bottom" id="M49-hr-zlV"/>
+                                    <constraint firstItem="IbG-cc-Btr" firstAttribute="leading" secondItem="bGO-Nj-BFj" secondAttribute="leading" id="PCR-2O-Op6"/>
+                                    <constraint firstItem="KqZ-qi-FPJ" firstAttribute="top" secondItem="cNp-Zh-a1k" secondAttribute="bottom" constant="35" id="Ziu-6o-6fY"/>
+                                    <constraint firstAttribute="trailing" secondItem="cNp-Zh-a1k" secondAttribute="trailing" constant="30" id="bMM-dp-thV"/>
+                                    <constraint firstItem="cNp-Zh-a1k" firstAttribute="centerY" secondItem="bGO-Nj-BFj" secondAttribute="centerY" constant="-50" id="dQ0-C5-Cfq"/>
+                                    <constraint firstItem="IbG-cc-Btr" firstAttribute="top" secondItem="bGO-Nj-BFj" secondAttribute="top" id="l7C-CM-Awg"/>
+                                    <constraint firstItem="IbG-cc-Btr" firstAttribute="centerX" secondItem="bGO-Nj-BFj" secondAttribute="centerX" id="mHZ-yw-qbk"/>
+                                    <constraint firstItem="cNp-Zh-a1k" firstAttribute="leading" secondItem="bGO-Nj-BFj" secondAttribute="leading" constant="30" id="mxU-VI-0iL"/>
+                                    <constraint firstAttribute="height" constant="350" id="zgR-gY-HkX"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bH-3N-ROX">
                                 <rect key="frame" x="30" y="484" width="315" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.59215686270000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -29,7 +63,7 @@
                                     <constraint firstAttribute="height" constant="44" id="q1f-8U-fZ6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <state key="normal" title="Login with VK">
+                                <state key="normal" title="Continue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -41,36 +75,14 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="Iyv-mu-xe2"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk_logo" translatesAutoresizingMaskIntoConstraints="NO" id="URn-wb-Wtt">
-                                <rect key="frame" x="134.5" y="178.5" width="105" height="105"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="105" id="IoP-5U-2ul"/>
-                                    <constraint firstAttribute="width" secondItem="URn-wb-Wtt" secondAttribute="height" multiplier="1:1" id="ouv-lf-9Vw"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NTP Platform" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xn1-lK-lcg">
-                                <rect key="frame" x="103.5" y="105" width="169" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
-                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click 'Login' to continue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2a-05-vvW">
-                                <rect key="frame" x="96" y="354.5" width="182" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="URn-wb-Wtt" firstAttribute="centerX" secondItem="vHu-LP-j1Y" secondAttribute="centerX" id="Ai3-ee-dvD"/>
-                            <constraint firstItem="URn-wb-Wtt" firstAttribute="top" secondItem="Xn1-lK-lcg" secondAttribute="bottom" constant="40" id="I2L-HJ-l5f"/>
-                            <constraint firstItem="Xn1-lK-lcg" firstAttribute="top" secondItem="gOm-0j-0CU" secondAttribute="bottom" constant="105" id="LMW-xT-KQW"/>
-                            <constraint firstItem="t2a-05-vvW" firstAttribute="centerX" secondItem="vHu-LP-j1Y" secondAttribute="centerX" id="NKz-JE-Q1F"/>
+                            <constraint firstItem="bGO-Nj-BFj" firstAttribute="leading" secondItem="vHu-LP-j1Y" secondAttribute="leading" id="0UH-AZ-FK8"/>
+                            <constraint firstAttribute="trailing" secondItem="bGO-Nj-BFj" secondAttribute="trailing" id="Bgh-gP-3cK"/>
                             <constraint firstItem="DHx-bH-bly" firstAttribute="top" secondItem="8bH-3N-ROX" secondAttribute="bottom" constant="75" id="TMV-37-e8N"/>
-                            <constraint firstItem="t2a-05-vvW" firstAttribute="top" secondItem="URn-wb-Wtt" secondAttribute="bottom" constant="71" id="TeM-p9-dES"/>
+                            <constraint firstItem="bGO-Nj-BFj" firstAttribute="top" secondItem="gOm-0j-0CU" secondAttribute="bottom" id="TyO-pO-6wz"/>
                             <constraint firstAttribute="trailing" secondItem="8bH-3N-ROX" secondAttribute="trailing" constant="30" id="aa6-WD-mcp"/>
-                            <constraint firstItem="Xn1-lK-lcg" firstAttribute="centerX" secondItem="vHu-LP-j1Y" secondAttribute="centerX" id="rr1-OG-0La"/>
                             <constraint firstItem="8bH-3N-ROX" firstAttribute="leading" secondItem="vHu-LP-j1Y" secondAttribute="leading" constant="30" id="ssX-c8-g2D"/>
                         </constraints>
                     </view>
@@ -115,6 +127,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="vk_logo" width="1080" height="1080"/>
+        <image name="header" width="1600" height="900"/>
     </resources>
 </document>

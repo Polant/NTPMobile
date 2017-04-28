@@ -20,7 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootRouter = RootRouter(window: window)
         
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().barTintColor = UIColor.color(from: 0x0097FF)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 243.0 / 255.0,
+                                                            green: 80.0 / 255.0,
+                                                            blue: 28.0 / 255.0,
+                                                            alpha: 1.0)// .color(from: 0x0097FF)
         
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         

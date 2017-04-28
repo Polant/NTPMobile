@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="9d8-cd-L8Y">
-                            <rect key="frame" x="0.0" y="340" width="375" height="0.0"/>
+                            <rect key="frame" x="0.0" y="400" width="375" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -32,7 +32,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="219.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="side_menu_header" translatesAutoresizingMaskIntoConstraints="NO" id="rwv-ha-ezJ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="rwv-ha-ezJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="219.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etG-Y6-cbt">
@@ -88,18 +88,40 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAf-OA-Cuz">
                                                     <rect key="frame" x="30" y="13.5" width="315" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <state key="normal" title="Logout">
+                                                    <state key="normal" title="Categories">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="actionLogout:" destination="4Tx-pM-qk7" eventType="touchUpInside" id="vVa-PO-LFB"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="dAf-OA-Cuz" secondAttribute="trailing" constant="30" id="C5h-XI-pE1"/>
                                                 <constraint firstItem="dAf-OA-Cuz" firstAttribute="leading" secondItem="RVy-RS-NfM" secondAttribute="leading" constant="30" id="Jhb-1s-r9n"/>
                                                 <constraint firstItem="dAf-OA-Cuz" firstAttribute="centerY" secondItem="RVy-RS-NfM" secondAttribute="centerY" id="Zsq-oU-8en"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="60" id="jcV-IZ-vBR">
+                                        <rect key="frame" x="0.0" y="340" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jcV-IZ-vBR" id="zuE-lH-F3f">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c31-ba-nfT">
+                                                    <rect key="frame" x="30" y="13.5" width="315" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Logout">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="actionLogout:" destination="4Tx-pM-qk7" eventType="touchUpInside" id="K5d-bE-cmF"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="c31-ba-nfT" firstAttribute="leading" secondItem="zuE-lH-F3f" secondAttribute="leading" constant="30" id="YAs-NP-FZW"/>
+                                                <constraint firstItem="c31-ba-nfT" firstAttribute="centerY" secondItem="zuE-lH-F3f" secondAttribute="centerY" id="ozi-Bp-21w"/>
+                                                <constraint firstAttribute="trailing" secondItem="c31-ba-nfT" secondAttribute="trailing" constant="30" id="rYz-Xd-tlN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -139,6 +161,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="side_menu_header" width="1280" height="800"/>
+        <image name="header" width="1600" height="900"/>
     </resources>
 </document>
