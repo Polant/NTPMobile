@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="9d8-cd-L8Y">
-                            <rect key="frame" x="0.0" y="400" width="375" height="0.0"/>
+                            <rect key="frame" x="0.0" y="460" width="375" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -91,6 +91,9 @@
                                                     <state key="normal" title="Categories">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="actionShowCategories:" destination="4Tx-pM-qk7" eventType="touchUpInside" id="Yg8-kD-ZoJ"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -100,8 +103,33 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="60" id="jcV-IZ-vBR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="60" id="WQ0-I6-rjQ">
                                         <rect key="frame" x="0.0" y="340" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WQ0-I6-rjQ" id="au4-3V-yFK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xn-PF-Fav">
+                                                    <rect key="frame" x="30" y="13.5" width="315" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Service">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="actionShowService:" destination="4Tx-pM-qk7" eventType="touchUpInside" id="qrG-cJ-9nf"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="5xn-PF-Fav" secondAttribute="trailing" constant="30" id="Vx1-fL-TXC"/>
+                                                <constraint firstItem="5xn-PF-Fav" firstAttribute="centerY" secondItem="au4-3V-yFK" secondAttribute="centerY" id="bPB-V0-Neh"/>
+                                                <constraint firstItem="5xn-PF-Fav" firstAttribute="leading" secondItem="au4-3V-yFK" secondAttribute="leading" constant="30" id="dG9-B7-Qfx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="60" id="jcV-IZ-vBR">
+                                        <rect key="frame" x="0.0" y="400" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jcV-IZ-vBR" id="zuE-lH-F3f">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>

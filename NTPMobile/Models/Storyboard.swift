@@ -13,6 +13,7 @@ enum Storyboard: String {
     case oAuth = "OAuth"
     case menu = "Menu"
     case content = "Content"
+    case service = "Service"
     
     func instantiate() -> UIStoryboard {
         return UIStoryboard(name: rawValue, bundle: nil)

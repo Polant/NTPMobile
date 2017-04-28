@@ -26,7 +26,8 @@ class OAuthRouter: Router<OAuthViewController> {
         let container = Storyboard.menu
             .instantiate()
             .instantiateViewController(withIdentifier: "MenuContainerViewController") as! MenuContainerViewController
-    
+        MenuContainerRouter.injectModule(in: container)
+        
         // Side menu
         let sideMenuViewController = Storyboard.menu
             .instantiate()

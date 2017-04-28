@@ -10,6 +10,7 @@ import UIKit
 
 protocol SideMenuViewControllerDelegate: class {
     func sideMenuViewControllerDidSelectFeed(_ vc: SideMenuViewController)
+    func sideMenuViewControllerDidSelectService(_ vc: SideMenuViewController)
     func sideMenuViewControllerDidSelectLogout(_ vc: SideMenuViewController)
 }
 
@@ -43,6 +44,13 @@ class SideMenuViewController: UITableViewController {
     
     @IBAction func actionShowFeed(_ sender: Any) {
         delegate?.sideMenuViewControllerDidSelectFeed(self)
+    }
+    
+    @IBAction func actionShowCategories(_ sender: Any) {
+    }
+    
+    @IBAction func actionShowService(_ sender: Any) {
+        delegate?.sideMenuViewControllerDidSelectService(self)
     }
     
     @IBAction func actionLogout(_ sender: Any) {

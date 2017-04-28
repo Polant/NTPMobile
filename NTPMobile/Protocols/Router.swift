@@ -22,7 +22,7 @@ class Router <T: UIViewController> {
     
     //MARK: - Actions
     
-    func dismiss(animated: Bool) {
+    func dismiss(animated: Bool = true) {
         
         guard let contentVC = viewController else { return }
         

@@ -28,6 +28,9 @@ protocol MenuContainerViewInput: class {
 
 public class MenuContainerViewController: ContainerViewController {
     
+    var interactor: MenuContainerInteractor!
+    var router: MenuContainerRouter!
+    
     // MARK: - Life Cycle
     
     override public func viewDidLoad() {
@@ -44,10 +47,13 @@ public class MenuContainerViewController: ContainerViewController {
 extension MenuContainerViewController: SideMenuViewControllerDelegate {
     
     func sideMenuViewControllerDidSelectFeed(_ vc: SideMenuViewController) {
-        
+        self.router.presentServiceViewController()
+    }
+    func sideMenuViewControllerDidSelectService(_ vc: SideMenuViewController) {
+        self.router.presentServiceViewController()
     }
     func sideMenuViewControllerDidSelectLogout(_ vc: SideMenuViewController) {
-        self.dismiss(animated: true)
+        self.router.dismiss()
     }
 }
 
