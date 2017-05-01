@@ -12,7 +12,7 @@ class OAuthInteractor: Interactor<OAuthViewController> {
     
     // MARK: - Actions
     
-    func send(code: String, redirectURI: String) {
+    func send(code: String) {
         
         guard let localUser = ServiceManager.shared.localUser else { return }
         
@@ -20,7 +20,7 @@ class OAuthInteractor: Interactor<OAuthViewController> {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
-        request.httpBody = "code=\(code)&redirect_uri=\(redirectURI)&user_id=\(localUser.id)".data(using: .utf8)
+        request.httpBody = "code=\(code)&user_id=\(localUser.id)".data(using: .utf8)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
                                     

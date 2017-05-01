@@ -27,7 +27,7 @@ enum VKAuthError {
 }
 
 protocol VKAuthViewControllerDelegate: class {
-    func vkAuthViewController(_ viewController: VKAuthViewController, didRecieveAuthCode code: String, redirectURI: String)
+    func vkAuthViewController(_ viewController: VKAuthViewController, didRecieveAuthCode code: String)
     func vkAuthViewController(_ viewController: VKAuthViewController, didRecieveError error: VKAuthError)
 }
 
@@ -103,7 +103,7 @@ extension VKAuthViewController: UIWebViewDelegate {
             }
             return true
         }
-        delegate?.vkAuthViewController(self, didRecieveAuthCode: code, redirectURI: VKAuthCredentials.redirectURI)
+        delegate?.vkAuthViewController(self, didRecieveAuthCode: code)
         
         return false
     }

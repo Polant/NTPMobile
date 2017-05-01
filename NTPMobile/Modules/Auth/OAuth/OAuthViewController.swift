@@ -30,9 +30,9 @@ class OAuthViewController: UIViewController {
 // MARK: - VKAuthViewControllerDelegate
 extension OAuthViewController: VKAuthViewControllerDelegate {
     
-    func vkAuthViewController(_ vc: VKAuthViewController, didRecieveAuthCode code: String, redirectURI: String) {
+    func vkAuthViewController(_ vc: VKAuthViewController, didRecieveAuthCode code: String) {
         vc.dismiss(animated: true) { 
-            self.interactor.send(code: code, redirectURI: redirectURI)
+            self.interactor.send(code: code)
         }
     }
     
