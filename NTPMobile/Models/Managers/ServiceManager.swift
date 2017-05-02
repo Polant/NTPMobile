@@ -23,7 +23,7 @@ class ServiceManager {
     private init() {}
     
     fileprivate(set) var localUser: LocalUser?
-    
+    fileprivate(set) var currentApp: App?
     
     //MARK: - Auth
     
@@ -85,13 +85,55 @@ class ServiceManager {
     }
     
     
-    func loadPosts(forAppWithId appId: Int, offset: Int, count: Int, completion: @escaping ([Post]) -> Void) {
+    // MARK: - App
+    
+    func loadAppInfo(completion: @escaping (ResponseResult<App>) -> Void) {
+        guard let user = localUser else {
+            completion(.error(message: "Local user not found"))
+            return
+        }
+        let request = AppRouter.loadAppInfo(appId: Constants.appID,
+                                            userId: user.id,
+                                            tokenString: user.token.tokenString)
+        
+        Alamofire
+            .request(request)
+            .responseJSON { (dataResponse) in
+                
+                guard let response = dataResponse.result.value as? [String: Any] else {
+                    completion(.error(message: "Something went wrong"))
+                    return
+                }
+                
+                let success = !(response["error"] as! Bool)
+                if success {
+                    if let appJSON = response["app"] as? [String: Any] {
+                        self.currentApp = App(with: appJSON)
+                        completion(.success(self.currentApp!))
+                    }
+                } else {
+                    debugPrint(response)
+                    completion(.error(message: "Something went wrong"))
+                }
+                
+        }
+
+    }
+    
+    // MARK: - Posts
+    
+    func loadPosts(for category: Category,
+                   ownersOnly: Bool,
+                   offset: Int,
+                   count: Int,
+                   completion: @escaping ([Post]) -> Void) {
+        
         guard let user = localUser else {
             completion([])
             return
         }
-        
-        let request = PostRouter.loadPosts(appId: appId,
+        let request = PostRouter.loadPosts(categoryId: category.id!,
+                                           ownersOnly: ownersOnly,
                                            offset: offset,
                                            count: count,
                                            userId: user.id,
@@ -172,7 +214,7 @@ enum PostRouter: URLRequestConvertible {
     
     private static let baseURLString = "\(Constants.baseApiServicePath)/posts"
     
-    case loadPosts(appId: Int, offset: Int, count: Int, userId: Int, tokenString: String)
+    case loadPosts(categoryId: Int, ownersOnly: Bool, offset: Int, count: Int, userId: Int, tokenString: String)
     
     private var method: HTTPMethod {
         return .post
@@ -193,12 +235,51 @@ enum PostRouter: URLRequestConvertible {
         urlRequest.httpMethod = method.rawValue
         
         switch self {
-        case let .loadPosts(appId, offset, count, userId, tokenString):
+        case let .loadPosts(categoryId, ownersOnly, offset, count, userId, tokenString):
             let params: [String : Any] = [
                 "token": tokenString,
-                "app_id": appId,
+                "category_id": categoryId,
+                "owners_only": ownersOnly,
                 "offset": offset,
                 "count": count,
+                "user_id": userId
+            ]
+            urlRequest = try URLEncoding.default.encode(urlRequest, with:params)
+        }
+        return urlRequest
+    }
+}
+
+enum AppRouter: URLRequestConvertible {
+    private static let baseURLString = "\(Constants.baseApiServicePath)/apps"
+    
+    case loadAppInfo(appId: Int, userId: Int, tokenString: String)
+    
+    private var method: HTTPMethod {
+        return .post
+    }
+    
+    private var path: String {
+        switch self {
+        case let .loadAppInfo(appId, _, _):
+            return "\(appId)"
+        }
+    }
+    
+    
+    //MARK: URLRequestConvertible
+    
+    func asURLRequest() throws -> URLRequest {
+        
+        let url = try AppRouter.baseURLString.asURL()
+        
+        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+        urlRequest.httpMethod = method.rawValue
+        
+        switch self {
+        case let .loadAppInfo(_, userId, tokenString):
+            let params: [String : Any] = [
+                "token": tokenString,
                 "user_id": userId
             ]
             urlRequest = try URLEncoding.default.encode(urlRequest, with:params)

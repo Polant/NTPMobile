@@ -17,9 +17,6 @@
 		142684D51EB2681C00EDDCE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684B01EB2681C00EDDCE9 /* AppDelegate.swift */; };
 		142684D61EB2681C00EDDCE9 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684B11EB2681C00EDDCE9 /* RootRouter.swift */; };
 		142684D81EB2681C00EDDCE9 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684B51EB2681C00EDDCE9 /* AccessToken.swift */; };
-		142684D91EB2681C00EDDCE9 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684B61EB2681C00EDDCE9 /* KeyboardManager.swift */; };
-		142684DA1EB2681C00EDDCE9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684B71EB2681C00EDDCE9 /* Post.swift */; };
-		142684DB1EB2681C00EDDCE9 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684B81EB2681C00EDDCE9 /* ServiceManager.swift */; };
 		142684DC1EB2681C00EDDCE9 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684B91EB2681C00EDDCE9 /* Storyboard.swift */; };
 		142684DD1EB2681C00EDDCE9 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684BE1EB2681C00EDDCE9 /* LoginInteractor.swift */; };
 		142684DE1EB2681C00EDDCE9 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684C01EB2681C00EDDCE9 /* LoginRouter.swift */; };
@@ -48,12 +45,21 @@
 		142685151EB2865E00EDDCE9 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685141EB2865E00EDDCE9 /* SideMenuViewController.swift */; };
 		142685191EB2887300EDDCE9 /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685181EB2887300EDDCE9 /* UIViewController+Storyboard.swift */; };
 		1426851B1EB28B8800EDDCE9 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426851A1EB28B8800EDDCE9 /* NavigationController.swift */; };
-		1426851F1EB28E1800EDDCE9 /* FeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426851E1EB28E1800EDDCE9 /* FeedInteractor.swift */; };
-		142685211EB28E3900EDDCE9 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685201EB28E3900EDDCE9 /* FeedViewController.swift */; };
-		142685241EB28E5100EDDCE9 /* FeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685231EB28E5100EDDCE9 /* FeedRouter.swift */; };
-		142685271EB2984E00EDDCE9 /* LocalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142685261EB2984E00EDDCE9 /* LocalUser.swift */; };
 		1426852B1EB2B49F00EDDCE9 /* PostImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426852A1EB2B49F00EDDCE9 /* PostImageTableViewCell.swift */; };
 		1426852E1EB2B91F00EDDCE9 /* PostTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426852D1EB2B91F00EDDCE9 /* PostTextTableViewCell.swift */; };
+		142FD6C81EB8E9AF00537DE2 /* FeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6C31EB8E9AF00537DE2 /* FeedInteractor.swift */; };
+		142FD6C91EB8E9AF00537DE2 /* FeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6C51EB8E9AF00537DE2 /* FeedRouter.swift */; };
+		142FD6CA1EB8E9AF00537DE2 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6C71EB8E9AF00537DE2 /* FeedViewController.swift */; };
+		142FD6CC1EB8EAD500537DE2 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6CB1EB8EAD500537DE2 /* App.swift */; };
+		142FD6CF1EB8EB0100537DE2 /* LocalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6CD1EB8EB0100537DE2 /* LocalUser.swift */; };
+		142FD6D01EB8EB0100537DE2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6CE1EB8EB0100537DE2 /* Post.swift */; };
+		142FD6D31EB8EB0800537DE2 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6D11EB8EB0800537DE2 /* KeyboardManager.swift */; };
+		142FD6D41EB8EB0800537DE2 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6D21EB8EB0800537DE2 /* ServiceManager.swift */; };
+		142FD6D61EB8EB6F00537DE2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6D51EB8EB6F00537DE2 /* Category.swift */; };
+		142FD6DA1EB9021500537DE2 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6D91EB9021500537DE2 /* MenuTableViewCell.swift */; };
+		142FD6DC1EB9022F00537DE2 /* MenuHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6DB1EB9022F00537DE2 /* MenuHeaderTableViewCell.swift */; };
+		142FD6DE1EB9024000537DE2 /* MenuCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6DD1EB9024000537DE2 /* MenuCategoryTableViewCell.swift */; };
+		142FD6E01EB91CD100537DE2 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6DF1EB91CD100537DE2 /* NotificationManager.swift */; };
 		3E8154B305985CDE06D65C41 /* Pods_NTPMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,9 +76,6 @@
 		142684B01EB2681C00EDDCE9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		142684B11EB2681C00EDDCE9 /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		142684B51EB2681C00EDDCE9 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
-		142684B61EB2681C00EDDCE9 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
-		142684B71EB2681C00EDDCE9 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		142684B81EB2681C00EDDCE9 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		142684B91EB2681C00EDDCE9 /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		142684BE1EB2681C00EDDCE9 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		142684C01EB2681C00EDDCE9 /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
@@ -103,12 +106,21 @@
 		142685141EB2865E00EDDCE9 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuViewController.swift; path = Menu/View/SideMenuViewController.swift; sourceTree = "<group>"; };
 		142685181EB2887300EDDCE9 /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
 		1426851A1EB28B8800EDDCE9 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = Navigation/NavigationController.swift; sourceTree = "<group>"; };
-		1426851E1EB28E1800EDDCE9 /* FeedInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedInteractor.swift; path = Logic/FeedInteractor.swift; sourceTree = "<group>"; };
-		142685201EB28E3900EDDCE9 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = View/FeedViewController.swift; sourceTree = "<group>"; };
-		142685231EB28E5100EDDCE9 /* FeedRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedRouter.swift; path = Route/FeedRouter.swift; sourceTree = "<group>"; };
-		142685261EB2984E00EDDCE9 /* LocalUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalUser.swift; sourceTree = "<group>"; };
 		1426852A1EB2B49F00EDDCE9 /* PostImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostImageTableViewCell.swift; path = Cells/PostImageTableViewCell.swift; sourceTree = "<group>"; };
 		1426852D1EB2B91F00EDDCE9 /* PostTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostTextTableViewCell.swift; path = Cells/PostTextTableViewCell.swift; sourceTree = "<group>"; };
+		142FD6C31EB8E9AF00537DE2 /* FeedInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedInteractor.swift; sourceTree = "<group>"; };
+		142FD6C51EB8E9AF00537DE2 /* FeedRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedRouter.swift; sourceTree = "<group>"; };
+		142FD6C71EB8E9AF00537DE2 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		142FD6CB1EB8EAD500537DE2 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = App.swift; path = Entity/App.swift; sourceTree = "<group>"; };
+		142FD6CD1EB8EB0100537DE2 /* LocalUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalUser.swift; path = Entity/LocalUser.swift; sourceTree = "<group>"; };
+		142FD6CE1EB8EB0100537DE2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Entity/Post.swift; sourceTree = "<group>"; };
+		142FD6D11EB8EB0800537DE2 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardManager.swift; path = Managers/KeyboardManager.swift; sourceTree = "<group>"; };
+		142FD6D21EB8EB0800537DE2 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceManager.swift; path = Managers/ServiceManager.swift; sourceTree = "<group>"; };
+		142FD6D51EB8EB6F00537DE2 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Entity/Category.swift; sourceTree = "<group>"; };
+		142FD6D91EB9021500537DE2 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewCell.swift; path = Cells/MenuTableViewCell.swift; sourceTree = "<group>"; };
+		142FD6DB1EB9022F00537DE2 /* MenuHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuHeaderTableViewCell.swift; path = Cells/MenuHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		142FD6DD1EB9024000537DE2 /* MenuCategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCategoryTableViewCell.swift; path = Cells/MenuCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		142FD6DF1EB91CD100537DE2 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = Managers/NotificationManager.swift; sourceTree = "<group>"; };
 		7D0764A3EAAC9B95AF2380D1 /* Pods-NTPMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		AFE2E78804CD9334DE7FE0BC /* Pods-NTPMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.release.xcconfig"; sourceTree = "<group>"; };
 		CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NTPMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,10 +224,10 @@
 		142684BA1EB2681C00EDDCE9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				142685161EB2866300EDDCE9 /* Menu */,
-				142684F01EB26D8300EDDCE9 /* Container */,
 				142684BB1EB2681C00EDDCE9 /* Auth */,
-				142684CD1EB2681C00EDDCE9 /* Posts */,
+				142684F01EB26D8300EDDCE9 /* Container */,
+				142685161EB2866300EDDCE9 /* Menu */,
+				142FD6C11EB8E9AF00537DE2 /* Feed */,
 				1425F1161EB3CCB300F24E0A /* Service */,
 			);
 			path = Modules;
@@ -307,16 +319,6 @@
 				142684CC1EB2681C00EDDCE9 /* RegistrationViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		142684CD1EB2681C00EDDCE9 /* Posts */ = {
-			isa = PBXGroup;
-			children = (
-				142685221EB28E3C00EDDCE9 /* Logic */,
-				142685251EB28E5400EDDCE9 /* Route */,
-				1426851D1EB28DED00EDDCE9 /* View */,
-			);
-			path = Posts;
 			sourceTree = "<group>";
 		};
 		142684CF1EB2681C00EDDCE9 /* Protocols */ = {
@@ -431,35 +433,12 @@
 			name = Navigation;
 			sourceTree = "<group>";
 		};
-		1426851D1EB28DED00EDDCE9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				142685201EB28E3900EDDCE9 /* FeedViewController.swift */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		142685221EB28E3C00EDDCE9 /* Logic */ = {
-			isa = PBXGroup;
-			children = (
-				1426851E1EB28E1800EDDCE9 /* FeedInteractor.swift */,
-			);
-			name = Logic;
-			sourceTree = "<group>";
-		};
-		142685251EB28E5400EDDCE9 /* Route */ = {
-			isa = PBXGroup;
-			children = (
-				142685231EB28E5100EDDCE9 /* FeedRouter.swift */,
-			);
-			name = Route;
-			sourceTree = "<group>";
-		};
 		142685281EB298B400EDDCE9 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				142684B61EB2681C00EDDCE9 /* KeyboardManager.swift */,
-				142684B81EB2681C00EDDCE9 /* ServiceManager.swift */,
+				142FD6D11EB8EB0800537DE2 /* KeyboardManager.swift */,
+				142FD6D21EB8EB0800537DE2 /* ServiceManager.swift */,
+				142FD6DF1EB91CD100537DE2 /* NotificationManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -467,8 +446,10 @@
 		142685291EB29D4200EDDCE9 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				142684B71EB2681C00EDDCE9 /* Post.swift */,
-				142685261EB2984E00EDDCE9 /* LocalUser.swift */,
+				142FD6CD1EB8EB0100537DE2 /* LocalUser.swift */,
+				142FD6CE1EB8EB0100537DE2 /* Post.swift */,
+				142FD6CB1EB8EAD500537DE2 /* App.swift */,
+				142FD6D51EB8EB6F00537DE2 /* Category.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -478,8 +459,45 @@
 			children = (
 				1426852A1EB2B49F00EDDCE9 /* PostImageTableViewCell.swift */,
 				1426852D1EB2B91F00EDDCE9 /* PostTextTableViewCell.swift */,
+				142FD6D91EB9021500537DE2 /* MenuTableViewCell.swift */,
+				142FD6DB1EB9022F00537DE2 /* MenuHeaderTableViewCell.swift */,
+				142FD6DD1EB9024000537DE2 /* MenuCategoryTableViewCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		142FD6C11EB8E9AF00537DE2 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				142FD6C21EB8E9AF00537DE2 /* Logic */,
+				142FD6C41EB8E9AF00537DE2 /* Route */,
+				142FD6C61EB8E9AF00537DE2 /* View */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		142FD6C21EB8E9AF00537DE2 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				142FD6C31EB8E9AF00537DE2 /* FeedInteractor.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		142FD6C41EB8E9AF00537DE2 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				142FD6C51EB8E9AF00537DE2 /* FeedRouter.swift */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
+		142FD6C61EB8E9AF00537DE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				142FD6C71EB8E9AF00537DE2 /* FeedViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		188DA02B3541745EE5D04982 /* Pods */ = {
@@ -639,34 +657,40 @@
 				142685011EB26D8B00EDDCE9 /* ContainerSegue.swift in Sources */,
 				142684D51EB2681C00EDDCE9 /* AppDelegate.swift in Sources */,
 				142685031EB26D8B00EDDCE9 /* ContainerViewController.swift in Sources */,
+				142FD6D31EB8EB0800537DE2 /* KeyboardManager.swift in Sources */,
+				142FD6DC1EB9022F00537DE2 /* MenuHeaderTableViewCell.swift in Sources */,
 				142685041EB26D8B00EDDCE9 /* Constraints.swift in Sources */,
-				142684D91EB2681C00EDDCE9 /* KeyboardManager.swift in Sources */,
-				142685241EB28E5100EDDCE9 /* FeedRouter.swift in Sources */,
 				1425F1191EB3CCB300F24E0A /* ServiceViewController.swift in Sources */,
-				142684DA1EB2681C00EDDCE9 /* Post.swift in Sources */,
+				142FD6CF1EB8EB0100537DE2 /* LocalUser.swift in Sources */,
+				142FD6D41EB8EB0800537DE2 /* ServiceManager.swift in Sources */,
 				142684E71EB2681C00EDDCE9 /* Router.swift in Sources */,
-				142685271EB2984E00EDDCE9 /* LocalUser.swift in Sources */,
 				142685021EB26D8B00EDDCE9 /* ContainerView.swift in Sources */,
 				1426850F1EB2742E00EDDCE9 /* OAuthRouter.swift in Sources */,
 				142684F81EB26D8300EDDCE9 /* MenuContainerViewController.swift in Sources */,
+				142FD6E01EB91CD100537DE2 /* NotificationManager.swift in Sources */,
+				142FD6C91EB8E9AF00537DE2 /* FeedRouter.swift in Sources */,
+				142FD6CA1EB8E9AF00537DE2 /* FeedViewController.swift in Sources */,
 				142685151EB2865E00EDDCE9 /* SideMenuViewController.swift in Sources */,
 				142684DC1EB2681C00EDDCE9 /* Storyboard.swift in Sources */,
 				142684F51EB26D8300EDDCE9 /* MenuContainerInteractor.swift in Sources */,
 				142684E01EB2681C00EDDCE9 /* OAuthViewController.swift in Sources */,
-				142684DB1EB2681C00EDDCE9 /* ServiceManager.swift in Sources */,
 				142684D81EB2681C00EDDCE9 /* AccessToken.swift in Sources */,
 				142684E41EB2681C00EDDCE9 /* RegistrationViewController.swift in Sources */,
 				142684E61EB2681C00EDDCE9 /* Interactor.swift in Sources */,
+				142FD6DE1EB9024000537DE2 /* MenuCategoryTableViewCell.swift in Sources */,
 				142684DE1EB2681C00EDDCE9 /* LoginRouter.swift in Sources */,
 				142684E81EB2681C00EDDCE9 /* Constants.swift in Sources */,
-				142685211EB28E3900EDDCE9 /* FeedViewController.swift in Sources */,
+				142FD6D01EB8EB0100537DE2 /* Post.swift in Sources */,
 				142684E21EB2681C00EDDCE9 /* RegistrationInteractor.swift in Sources */,
+				142FD6C81EB8E9AF00537DE2 /* FeedInteractor.swift in Sources */,
+				142FD6CC1EB8EAD500537DE2 /* App.swift in Sources */,
+				142FD6DA1EB9021500537DE2 /* MenuTableViewCell.swift in Sources */,
 				142684DD1EB2681C00EDDCE9 /* LoginInteractor.swift in Sources */,
 				142685091EB270BF00EDDCE9 /* ObjcException.m in Sources */,
-				1426851F1EB28E1800EDDCE9 /* FeedInteractor.swift in Sources */,
 				142684DF1EB2681C00EDDCE9 /* LoginViewController.swift in Sources */,
 				142684E31EB2681C00EDDCE9 /* RegistrationRouter.swift in Sources */,
 				142685051EB26D8B00EDDCE9 /* Views.swift in Sources */,
+				142FD6D61EB8EB6F00537DE2 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

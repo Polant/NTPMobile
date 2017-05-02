@@ -46,6 +46,8 @@ class OAuthRouter: Router<OAuthViewController> {
         container.setCentral(viewController: contentNavigationController)
         container.setLeft(viewController: sideMenuViewController)
         
+        container.feedModuleInput = feedViewController
+        
         self.viewController?.present(container, animated: true)
     }
     

@@ -31,14 +31,41 @@ public class MenuContainerViewController: ContainerViewController {
     var interactor: MenuContainerInteractor!
     var router: MenuContainerRouter!
     
+    weak var feedModuleInput: FeedModuleInput?
+    
     // MARK: - Life Cycle
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        registerForNotificationsNotifications()
+    }
+    
+    func registerForNotificationsNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(categoriesDidLoad(notification:)),
+                                               name: NSNotification.Name(rawValue: NotificationManager.Notification.categoriesDidLoad.name),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(categoryDidLoad(notification:)),
+                                               name: NSNotification.Name(rawValue: NotificationManager.Notification.categoryDidSelected.name),
+                                               object: nil)
     }
     
     deinit {
+        NotificationCenter.default.removeObserver(self)
         debugPrint("\(type(of: self)) deinited")
+    }
+    
+    // MARK: Notifications
+    
+    func categoriesDidLoad(notification: NSNotification) {
+        feedModuleInput?.shouldReloadFeed()
+    }
+    
+    func categoryDidLoad(notification: NSNotification) {
+        if let category = notification.object as? Category {
+            feedModuleInput?.shouldReloadCategory(category)
+        }
     }
 }
 
@@ -48,6 +75,10 @@ extension MenuContainerViewController: SideMenuViewControllerDelegate {
     
     func sideMenuViewControllerDidSelectFeed(_ vc: SideMenuViewController) {
         self.router.presentFeedViewController()
+    }
+    func sideMenuViewController(_ vc: SideMenuViewController, didSelectCategory category: Category) {
+        self.router.presentFeedViewController()
+        NotificationManager.shared.sendCategoryDidSelected(category: category)
     }
     func sideMenuViewControllerDidSelectService(_ vc: SideMenuViewController) {
         self.router.presentServiceViewController()

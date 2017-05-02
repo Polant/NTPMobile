@@ -8,6 +8,13 @@
 
 import UIKit
 
+protocol FeedModuleInput: class {
+    func shouldReloadFeed()
+    func shouldReloadCategory(_ category: Category)
+}
+
+private let pagingCount = 50
+
 class FeedViewController: UIViewController {
 
     // MARK: - Outlets
@@ -29,17 +36,29 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Feed"
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
-        ServiceManager.shared.loadPosts(forAppWithId: Constants.appID, offset: 0, count: 50) { posts in
-            self.posts = posts
-        }
     }
     
     // MARK: - Datasource
     
     func post(at indexPath: IndexPath) -> Post? {
         return posts?[indexPath.row]
+    }
+}
+
+// MARK: - FeedModuleInput
+
+extension FeedViewController: FeedModuleInput {
+    func shouldReloadCategory(_ category: Category) {
+        self.interactor.loadCategory(category, offset: 0, count: pagingCount) { [weak self] posts in
+            self?.posts = posts
+        }
+    }
+
+    func shouldReloadFeed() {
+        self.interactor.loadFeed(ownersOnly: false, offset: 0, count: pagingCount) { [weak self] posts in
+            self?.posts = posts
+        }
     }
 }
 

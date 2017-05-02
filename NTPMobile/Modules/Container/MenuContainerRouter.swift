@@ -39,6 +39,9 @@ class MenuContainerRouter: Router<MenuContainerViewController> {
         
         self.viewController?.setCentral(viewController: contentNavigationController)
         self.viewController?.toggleLeft(animated: true, completion: nil)
+        
+        // Setup feed input
+        self.viewController?.feedModuleInput = feedViewController
     }
 }
 
