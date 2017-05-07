@@ -73,9 +73,6 @@ public class MenuContainerViewController: ContainerViewController {
 
 extension MenuContainerViewController: SideMenuViewControllerDelegate {
     
-    func sideMenuViewControllerDidSelectFeed(_ vc: SideMenuViewController) {
-        self.router.presentFeedViewController()
-    }
     func sideMenuViewController(_ vc: SideMenuViewController, didSelectCategory category: Category) {
         self.router.presentFeedViewController()
         NotificationManager.shared.sendCategoryDidSelected(category: category)

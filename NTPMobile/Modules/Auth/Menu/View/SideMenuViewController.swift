@@ -9,7 +9,6 @@
 import UIKit
 
 protocol SideMenuViewControllerDelegate: class {
-    func sideMenuViewControllerDidSelectFeed(_ vc: SideMenuViewController)
     func sideMenuViewController(_ vc: SideMenuViewController, didSelectCategory category: Category)
     func sideMenuViewControllerDidSelectService(_ vc: SideMenuViewController)
     func sideMenuViewControllerDidSelectLogout(_ vc: SideMenuViewController)
@@ -22,7 +21,7 @@ class SideMenuViewController: UITableViewController {
     var categories: [Category] = []
     
     var numberOfRows: Int {
-        return categories.count + 4
+        return categories.count + 3
     }
     
     // MARK: - Life Cycle
@@ -42,10 +41,6 @@ class SideMenuViewController: UITableViewController {
     }
     
     // MARK: - Actions
-    
-    func actionShowFeed() {
-        delegate?.sideMenuViewControllerDidSelectFeed(self)
-    }
     
     func actionShowCategory(_ category: Category) {
         delegate?.sideMenuViewController(self, didSelectCategory: category)
@@ -72,11 +67,7 @@ class SideMenuViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as! MenuHeaderTableViewCell
             cell.setup(with: ServiceManager.shared.localUser)
             return cell
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell", for: indexPath) as! MenuTableViewCell
-            cell.setup(with: "Feed")
-            return cell
-        case 2..<2+categories.count:
+        case categoriesMenuRange():
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! MenuCategoryTableViewCell
             let category = self.category(at: indexPath)
             cell.setup(with: category)
@@ -98,7 +89,7 @@ class SideMenuViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             return 220
-        case 2..<2 + categories.count:
+        case categoriesMenuRange():
             return 90
         default:
             return 60
@@ -109,9 +100,7 @@ class SideMenuViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             break
-        case 1:
-            self.actionShowFeed()
-        case 2..<2+categories.count:
+        case categoriesMenuRange():
             let category = self.category(at: indexPath)
             self.actionShowCategory(category)
         default:
@@ -127,8 +116,12 @@ class SideMenuViewController: UITableViewController {
     // MARK: - Utils
     
     fileprivate func category(at indexPath: IndexPath) -> Category {
-        let index = indexPath.row - 2
+        let index = indexPath.row - categoriesMenuRange().lowerBound
         return categories[index]
+    }
+    
+    fileprivate func categoriesMenuRange() -> Range<Int> {
+        return 1..<1+categories.count
     }
     
 }
