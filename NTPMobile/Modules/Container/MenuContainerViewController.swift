@@ -45,10 +45,6 @@ public class MenuContainerViewController: ContainerViewController {
                                                selector: #selector(categoriesDidLoad(notification:)),
                                                name: NSNotification.Name(rawValue: NotificationManager.Notification.categoriesDidLoad.name),
                                                object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(categoryDidLoad(notification:)),
-                                               name: NSNotification.Name(rawValue: NotificationManager.Notification.categoryDidSelected.name),
-                                               object: nil)
     }
     
     deinit {
@@ -61,21 +57,15 @@ public class MenuContainerViewController: ContainerViewController {
     func categoriesDidLoad(notification: NSNotification) {
         feedModuleInput?.shouldReloadFeed()
     }
-    
-    func categoryDidLoad(notification: NSNotification) {
-        if let category = notification.object as? Category {
-            feedModuleInput?.shouldReloadCategory(category)
-        }
-    }
 }
 
 // MARK: - SideMenuViewControllerDelegate
 
 extension MenuContainerViewController: SideMenuViewControllerDelegate {
     
-    func sideMenuViewController(_ vc: SideMenuViewController, didSelectCategory category: Category) {
+    func sideMenuViewController(_ vc: SideMenuViewController, didSelectCategory category: Category, filter: Filter) {
         self.router.presentFeedViewController()
-        NotificationManager.shared.sendCategoryDidSelected(category: category)
+        self.feedModuleInput?.shouldReloadCategory(category, filter: filter)
     }
     func sideMenuViewControllerDidSelectService(_ vc: SideMenuViewController) {
         self.router.presentServiceViewController()

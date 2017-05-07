@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SideMenuViewControllerDelegate: class {
-    func sideMenuViewController(_ vc: SideMenuViewController, didSelectCategory category: Category)
+    func sideMenuViewController(_ vc: SideMenuViewController, didSelectCategory category: Category, filter: Filter)
     func sideMenuViewControllerDidSelectService(_ vc: SideMenuViewController)
     func sideMenuViewControllerDidSelectLogout(_ vc: SideMenuViewController)
 }
@@ -42,8 +42,8 @@ class SideMenuViewController: UITableViewController {
     
     // MARK: - Actions
     
-    func actionShowCategory(_ category: Category) {
-        delegate?.sideMenuViewController(self, didSelectCategory: category)
+    func actionShowCategory(_ category: Category, filter: Filter) {
+        delegate?.sideMenuViewController(self, didSelectCategory: category, filter: filter)
     }
     
     func actionShowService() {
@@ -69,6 +69,7 @@ class SideMenuViewController: UITableViewController {
             return cell
         case categoriesMenuRange():
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! MenuCategoryTableViewCell
+            cell.delegate = self
             let category = self.category(at: indexPath)
             cell.setup(with: category)
             return cell
@@ -101,8 +102,10 @@ class SideMenuViewController: UITableViewController {
         case 0:
             break
         case categoriesMenuRange():
+            let cell = tableView.cellForRow(at: indexPath) as! MenuCategoryTableViewCell
             let category = self.category(at: indexPath)
-            self.actionShowCategory(category)
+            let filter = Filter(isOwnersOnly: cell.isOwnersOnly)
+            self.actionShowCategory(category, filter: filter)
         default:
             if indexPath.row == numberOfRows - 1 {
                 self.actionLogout()
@@ -124,4 +127,17 @@ class SideMenuViewController: UITableViewController {
         return 1..<1+categories.count
     }
     
+}
+
+// MARK: - MenuCategoryTableViewCellDelegate
+
+extension SideMenuViewController: MenuCategoryTableViewCellDelegate {
+    func menuCategoryCell(_ cell: MenuCategoryTableViewCell, didSwitchSliderValue isOn: Bool) {
+        guard let indexPath = tableView.indexPath(for: cell) else {
+            return
+        }
+        let category = self.category(at: indexPath)
+        let filter = Filter(isOwnersOnly: cell.isOwnersOnly)
+        self.actionShowCategory(category, filter: filter)
+    }
 }

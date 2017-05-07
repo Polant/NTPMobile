@@ -60,6 +60,7 @@
 		142FD6DC1EB9022F00537DE2 /* MenuHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6DB1EB9022F00537DE2 /* MenuHeaderTableViewCell.swift */; };
 		142FD6DE1EB9024000537DE2 /* MenuCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6DD1EB9024000537DE2 /* MenuCategoryTableViewCell.swift */; };
 		142FD6E01EB91CD100537DE2 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6DF1EB91CD100537DE2 /* NotificationManager.swift */; };
+		14C423AC1EBF891A00858C36 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C423AB1EBF891A00858C36 /* Filter.swift */; };
 		3E8154B305985CDE06D65C41 /* Pods_NTPMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,7 @@
 		142FD6DB1EB9022F00537DE2 /* MenuHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuHeaderTableViewCell.swift; path = Cells/MenuHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		142FD6DD1EB9024000537DE2 /* MenuCategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCategoryTableViewCell.swift; path = Cells/MenuCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		142FD6DF1EB91CD100537DE2 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = Managers/NotificationManager.swift; sourceTree = "<group>"; };
+		14C423AB1EBF891A00858C36 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Entity/Filter.swift; sourceTree = "<group>"; };
 		7D0764A3EAAC9B95AF2380D1 /* Pods-NTPMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		AFE2E78804CD9334DE7FE0BC /* Pods-NTPMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.release.xcconfig"; sourceTree = "<group>"; };
 		CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NTPMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -450,6 +452,7 @@
 				142FD6CE1EB8EB0100537DE2 /* Post.swift */,
 				142FD6CB1EB8EAD500537DE2 /* App.swift */,
 				142FD6D51EB8EB6F00537DE2 /* Category.swift */,
+				14C423AB1EBF891A00858C36 /* Filter.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C423AC1EBF891A00858C36 /* Filter.swift in Sources */,
 				142684E91EB2681C00EDDCE9 /* UIColor+Hex.swift in Sources */,
 				142684D61EB2681C00EDDCE9 /* RootRouter.swift in Sources */,
 				1426852E1EB2B91F00EDDCE9 /* PostTextTableViewCell.swift in Sources */,

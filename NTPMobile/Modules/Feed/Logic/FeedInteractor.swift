@@ -30,9 +30,11 @@ class FeedInteractor: Interactor<FeedViewController> {
     }
     
     func loadCategory(_ category: Category,
-                      ownersOnly: Bool = false,
+                      filter: Filter? = nil,
                       offset: Int, count: Int,
                       completion: (([Post]) -> Void)? = nil) {
+        
+        let ownersOnly = filter?.isOwnersOnly ?? false
         
         ServiceManager.shared.loadPosts(for: category,
                                         ownersOnly: ownersOnly,

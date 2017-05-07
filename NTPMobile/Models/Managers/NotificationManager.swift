@@ -26,8 +26,12 @@ class NotificationManager {
         send(Notification.categoriesDidLoad, object: nil, userInfo: nil)
     }
     
-    func sendCategoryDidSelected(category: Category) {
-        send(Notification.categoryDidSelected, object: category, userInfo: nil)
+    func sendCategoryDidSelected(category: Category, filter: Filter?) {
+        var userInfo: [String: Any] = ["category": category]
+        if let filter = filter {
+            userInfo["filter"] = filter
+        }
+        send(Notification.categoryDidSelected, object: nil, userInfo: userInfo)
     }
     
     func send(_ notification: NotificationManager.Notification, object: Any?, userInfo: [AnyHashable: Any]?) {

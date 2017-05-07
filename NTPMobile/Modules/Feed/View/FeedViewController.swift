@@ -10,7 +10,7 @@ import UIKit
 
 protocol FeedModuleInput: class {
     func shouldReloadFeed()
-    func shouldReloadCategory(_ category: Category)
+    func shouldReloadCategory(_ category: Category, filter: Filter)
 }
 
 private let pagingCount = 50
@@ -49,8 +49,8 @@ class FeedViewController: UIViewController {
 // MARK: - FeedModuleInput
 
 extension FeedViewController: FeedModuleInput {
-    func shouldReloadCategory(_ category: Category) {
-        self.interactor.loadCategory(category, offset: 0, count: pagingCount) { [weak self] posts in
+    func shouldReloadCategory(_ category: Category, filter: Filter) {
+        self.interactor.loadCategory(category, filter: filter, offset: 0, count: pagingCount) { [weak self] posts in
             self?.posts = posts
         }
     }
