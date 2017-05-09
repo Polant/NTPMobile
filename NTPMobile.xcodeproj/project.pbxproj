@@ -14,6 +14,8 @@
 		141F00191EC1C50F0051C411 /* MenuHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F00161EC1C50F0051C411 /* MenuHeaderTableViewCell.swift */; };
 		141F001A1EC1C50F0051C411 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F00171EC1C50F0051C411 /* MenuTableViewCell.swift */; };
 		141F001C1EC1C7320051C411 /* TypeDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F001B1EC1C7320051C411 /* TypeDispatcher.swift */; };
+		141F001E1EC1CBF80051C411 /* String+Trimming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F001D1EC1CBF80051C411 /* String+Trimming.swift */; };
+		141F00201EC1D2CB0051C411 /* UITableView+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F001F1EC1D2CB0051C411 /* UITableView+Update.swift */; };
 		1425F1111EB3C98C00F24E0A /* Service.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1425F10F1EB3C98C00F24E0A /* Service.storyboard */; };
 		1425F1191EB3CCB300F24E0A /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1425F1181EB3CCB300F24E0A /* ServiceViewController.swift */; };
 		1426849A1EB266C000EDDCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142684991EB266C000EDDCE9 /* Assets.xcassets */; };
@@ -74,6 +76,8 @@
 		141F00161EC1C50F0051C411 /* MenuHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		141F00171EC1C50F0051C411 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		141F001B1EC1C7320051C411 /* TypeDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypeDispatcher.swift; path = Managers/TypeDispatcher.swift; sourceTree = "<group>"; };
+		141F001D1EC1CBF80051C411 /* String+Trimming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Trimming.swift"; sourceTree = "<group>"; };
+		141F001F1EC1D2CB0051C411 /* UITableView+Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Update.swift"; sourceTree = "<group>"; };
 		1425F1101EB3C98C00F24E0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Service.storyboard; sourceTree = "<group>"; };
 		1425F1181EB3CCB300F24E0A /* ServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
 		1426848F1EB266C000EDDCE9 /* NTPMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTPMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -372,8 +376,10 @@
 				142685071EB270BF00EDDCE9 /* ObjcException.h */,
 				142685081EB270BF00EDDCE9 /* ObjcException.m */,
 				142684D31EB2681C00EDDCE9 /* Constants.swift */,
+				141F001D1EC1CBF80051C411 /* String+Trimming.swift */,
 				142684D41EB2681C00EDDCE9 /* UIColor+Hex.swift */,
 				142685181EB2887300EDDCE9 /* UIViewController+Storyboard.swift */,
+				141F001F1EC1D2CB0051C411 /* UITableView+Update.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -696,6 +702,7 @@
 				142685031EB26D8B00EDDCE9 /* ContainerViewController.swift in Sources */,
 				142FD6D31EB8EB0800537DE2 /* KeyboardManager.swift in Sources */,
 				142685041EB26D8B00EDDCE9 /* Constraints.swift in Sources */,
+				141F001E1EC1CBF80051C411 /* String+Trimming.swift in Sources */,
 				1425F1191EB3CCB300F24E0A /* ServiceViewController.swift in Sources */,
 				142FD6CF1EB8EB0100537DE2 /* LocalUser.swift in Sources */,
 				142FD6D41EB8EB0800537DE2 /* ServiceManager.swift in Sources */,
@@ -704,6 +711,7 @@
 				1426850F1EB2742E00EDDCE9 /* OAuthRouter.swift in Sources */,
 				142684F81EB26D8300EDDCE9 /* MenuContainerViewController.swift in Sources */,
 				141F00191EC1C50F0051C411 /* MenuHeaderTableViewCell.swift in Sources */,
+				141F00201EC1D2CB0051C411 /* UITableView+Update.swift in Sources */,
 				142FD6E01EB91CD100537DE2 /* NotificationManager.swift in Sources */,
 				141F001A1EC1C50F0051C411 /* MenuTableViewCell.swift in Sources */,
 				142FD6C91EB8E9AF00537DE2 /* FeedRouter.swift in Sources */,

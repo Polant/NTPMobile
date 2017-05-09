@@ -92,7 +92,7 @@ class ServiceManager {
             completion(.error(message: "Local user not found"))
             return
         }
-        let request = AppRouter.loadAppInfo(appId: Constants.appID,
+        let request = AppRouter.loadAppInfo(appId: Constants.App.id,
                                             userId: user.id,
                                             tokenString: user.token.tokenString)
         
@@ -167,7 +167,7 @@ class ServiceManager {
 
 enum AuthRouter: URLRequestConvertible {
     
-    private static let baseURLString = "\(Constants.baseApiServicePath)/auth"
+    private static let baseURLString = "\(Constants.API.path)/auth"
     
     case loginUser(login: String, password: String)
     case registerUser(email: String, login: String, password: String)
@@ -212,7 +212,7 @@ enum AuthRouter: URLRequestConvertible {
 
 enum PostRouter: URLRequestConvertible {
     
-    private static let baseURLString = "\(Constants.baseApiServicePath)/posts"
+    private static let baseURLString = "\(Constants.API.path)/posts"
     
     case loadPosts(categoryId: Int, ownersOnly: Bool, offset: Int, count: Int, userId: Int, tokenString: String)
     
@@ -251,7 +251,7 @@ enum PostRouter: URLRequestConvertible {
 }
 
 enum AppRouter: URLRequestConvertible {
-    private static let baseURLString = "\(Constants.baseApiServicePath)/apps"
+    private static let baseURLString = "\(Constants.API.path)/apps"
     
     case loadAppInfo(appId: Int, userId: Int, tokenString: String)
     

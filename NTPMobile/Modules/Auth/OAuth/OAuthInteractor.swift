@@ -16,7 +16,7 @@ class OAuthInteractor: Interactor<OAuthViewController> {
         
         guard let localUser = ServiceManager.shared.localUser else { return }
         
-        let url = URL(string: "\(Constants.baseApiServicePath)/oauth/vk")!
+        let url = URL(string: "\(Constants.API.path)/oauth/vk")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         

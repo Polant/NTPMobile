@@ -74,12 +74,14 @@ extension FeedViewController: UITableViewDataSource {
         
         let reuseIdentifier = cellIdentifier(at: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        
         guard let post = self.post(at: indexPath) else {
             return cell
         }
         return TypeDispatcher.value(cell)
-            .dispatch { (cell: PostTableViewCell) in cell.setup(with: post) }
+            .dispatch { (cell: PostTableViewCell) in
+                cell.delegate = self
+                cell.setup(with: post)
+            }
             .extract()
     }
 
@@ -96,9 +98,17 @@ extension FeedViewController: UITableViewDataSource {
 extension FeedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        if let post = self.post(at: indexPath), post.photoUrl == nil {
+        if let post = self.post(at: indexPath), !post.hasPhoto {
             return 44
         }
         return UITableViewAutomaticDimension
+    }
+}
+
+// MARK: - PostTableViewCellDelegate
+
+extension FeedViewController: PostTableViewCellDelegate {
+    func postCell(_ cell: PostTableViewCell, whouldUpdateWithBlock block: () -> Void) {
+        tableView.update(with: block)
     }
 }

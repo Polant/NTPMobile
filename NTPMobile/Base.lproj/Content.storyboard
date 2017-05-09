@@ -41,6 +41,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXD-dP-yal">
                                                     <rect key="frame" x="12" y="32.5" width="52" height="19"/>
                                                     <state key="normal" title="More ..."/>
+                                                    <connections>
+                                                        <action selector="actionExpandText:" destination="oob-O9-nsv" eventType="touchUpInside" id="Wdz-3A-f0K"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -53,6 +56,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="expandButton" destination="HXD-dP-yal" id="9m6-Nd-6Ac"/>
                                             <outlet property="postTextLabel" destination="23X-dX-Ym8" id="WGY-7V-Nt5"/>
                                         </connections>
                                     </tableViewCell>
@@ -78,6 +82,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deB-47-aRG">
                                                     <rect key="frame" x="12" y="36.5" width="52" height="27"/>
                                                     <state key="normal" title="More ..."/>
+                                                    <connections>
+                                                        <action selector="actionExpandText:" destination="wNP-Fi-2VM" eventType="touchUpInside" id="tqB-3A-7f8"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -93,6 +100,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="expandButton" destination="deB-47-aRG" id="NmH-oR-xIP"/>
                                             <outlet property="postImageView" destination="g5I-Rv-btJ" id="ZYH-6W-ogG"/>
                                             <outlet property="postTextLabel" destination="a80-ci-WB3" id="1YW-4K-I1b"/>
                                         </connections>

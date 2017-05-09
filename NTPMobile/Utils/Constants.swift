@@ -9,6 +9,18 @@
 import Foundation
 
 struct Constants {
-    static let baseApiServicePath = "http://localhost:8089/mobile"
-    static let appID = 9
+    
+    struct API {
+        static let path = "http://localhost:8089/mobile"
+    }
+    
+    struct App {
+        static let id = 9
+    }
+    
+    struct UI {
+        struct Cell {
+            static let maxTrimmedTextLength = 140
+        }
+    }
 }
