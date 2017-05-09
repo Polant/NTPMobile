@@ -22,8 +22,9 @@ class NotificationManager {
         static let categoryDidSelected = Notification(name: "categoryDidSelected")
     }
     
-    func sendCategoriesDidLoad() {
-        send(Notification.categoriesDidLoad, object: nil, userInfo: nil)
+    func sendCategoriesDidLoad(_ categories: [Category]) {
+        let userInfo = ["categories": categories]
+        send(Notification.categoriesDidLoad, object: nil, userInfo: userInfo)
     }
     
     func sendCategoryDidSelected(category: Category, filter: Filter?) {

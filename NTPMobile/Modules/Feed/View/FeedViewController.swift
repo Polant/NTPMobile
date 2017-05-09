@@ -9,11 +9,10 @@
 import UIKit
 
 protocol FeedModuleInput: class {
-    func shouldReloadFeed()
     func shouldReloadCategory(_ category: Category, filter: Filter)
 }
 
-private let pagingCount = 50
+private let pagingCount = 20
 
 class FeedViewController: UIViewController {
 
@@ -26,11 +25,17 @@ class FeedViewController: UIViewController {
     var interactor: FeedInteractor!
     var router: FeedRouter!
     
-    var posts: [Post]? {
+    var posts: [Post] = [] {
         didSet {
             tableView.reloadData()
         }
     }
+    var category: Category?
+    var filter: Filter?
+    
+    var isDataLoading: Bool = false
+    var offset: Int = 0
+    var hasNextPage: Bool = true
     
     // MARK: - Life Cycle
     
@@ -39,10 +44,48 @@ class FeedViewController: UIViewController {
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
     }
     
+    // MARK: - Interaction
+    
+    func loadCategory(_ category: Category,
+                      with filter: Filter,
+                      offset: Int,
+                      count: Int = pagingCount,
+                      forceReload: Bool) {
+        
+        guard forceReload || self.hasNextPage && !self.isDataLoading else {
+            return
+        }
+        
+        self.isDataLoading = true
+        
+        self.interactor.loadCategory(category, filter: filter, offset: offset, count: count) { [weak self] posts in
+            self?.posts.append(contentsOf: posts)
+            self?.isDataLoading = false
+            self?.offset += posts.count
+            self?.hasNextPage = posts.count == count
+        }
+    }
+    
+    // MARK: - Pagination
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+                                   withVelocity velocity: CGPoint,
+                                   targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        let targetOffset = targetContentOffset.pointee.y
+        let maxOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        guard maxOffset - targetOffset <= 0 else { return }
+        
+        if let category = category, let filter = filter {
+            self.loadCategory(category, with: filter, offset: self.offset, forceReload: false)
+        }
+    }
+    
     // MARK: - Datasource
     
-    func post(at indexPath: IndexPath) -> Post? {
-        return posts?[indexPath.row]
+    func post(at indexPath: IndexPath) -> Post {
+        return posts[indexPath.row]
     }
 }
 
@@ -50,15 +93,10 @@ class FeedViewController: UIViewController {
 
 extension FeedViewController: FeedModuleInput {
     func shouldReloadCategory(_ category: Category, filter: Filter) {
-        self.interactor.loadCategory(category, filter: filter, offset: 0, count: pagingCount) { [weak self] posts in
-            self?.posts = posts
-        }
-    }
-
-    func shouldReloadFeed() {
-        self.interactor.loadFeed(ownersOnly: false, offset: 0, count: pagingCount) { [weak self] posts in
-            self?.posts = posts
-        }
+        self.category = category
+        self.filter = filter
+        self.offset = 0
+        loadCategory(category, with: filter, offset: self.offset, forceReload: true)
     }
 }
 
@@ -67,27 +105,25 @@ extension FeedViewController: FeedModuleInput {
 extension FeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts?.count ?? 0
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let reuseIdentifier = cellIdentifier(at: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        guard let post = self.post(at: indexPath) else {
-            return cell
-        }
+        
         return TypeDispatcher.value(cell)
             .dispatch { (cell: PostTableViewCell) in
                 cell.delegate = self
-                cell.setup(with: post)
+                cell.setup(with: self.post(at: indexPath))
             }
             .extract()
     }
 
     func cellIdentifier(at indexPath: IndexPath) -> String {
         let post = self.post(at: indexPath)
-        return post?.hasPhoto ?? false
+        return post.hasPhoto
             ? PostImageTableViewCell.cellIdentifier
             : PostTextTableViewCell.cellIdentifier
     }
@@ -98,7 +134,8 @@ extension FeedViewController: UITableViewDataSource {
 extension FeedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        if let post = self.post(at: indexPath), !post.hasPhoto {
+        let post = self.post(at: indexPath)
+        if !post.hasPhoto {
             return 44
         }
         return UITableViewAutomaticDimension

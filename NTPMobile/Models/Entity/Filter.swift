@@ -9,5 +9,5 @@
 import Foundation
 
 struct Filter {
-    var isOwnersOnly: Bool
+    var isOwnersOnly: Bool = false
 }

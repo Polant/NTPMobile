@@ -55,7 +55,11 @@ public class MenuContainerViewController: ContainerViewController {
     // MARK: Notifications
     
     func categoriesDidLoad(notification: NSNotification) {
-        feedModuleInput?.shouldReloadFeed()
+        guard let categories = notification.userInfo!["categories"] as? [Category],
+            let category = categories.first else {
+            return
+        }
+        self.feedModuleInput?.shouldReloadCategory(category, filter: Filter())
     }
 }
 

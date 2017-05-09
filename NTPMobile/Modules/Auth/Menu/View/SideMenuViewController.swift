@@ -33,7 +33,7 @@ class SideMenuViewController: UITableViewController {
             case let .success(app):
                 self?.categories = app.categories
                 self?.tableView.reloadData()
-                NotificationManager.shared.sendCategoriesDidLoad()
+                NotificationManager.shared.sendCategoriesDidLoad(app.categories)
             case .error(_):
                 break
             }
