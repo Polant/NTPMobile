@@ -14,6 +14,10 @@ class Post {
     var text: String
     var photoUrl: String?
     
+    var hasPhoto: Bool {
+        return photoUrl != nil
+    }
+    
     init(id: String, timestamp: Int, text: String, photoUrl: String?) {
         self.id = id
         self.timestamp = timestamp

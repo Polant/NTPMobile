@@ -8,11 +8,9 @@
 
 import UIKit
 
-class PostTextTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var postTextLabel: UILabel!
+class PostTextTableViewCell: PostTableViewCell {
     
-    func setup(with post: Post) {
-        postTextLabel.text = post.text
+    class var cellIdentifier: String {
+        return "postCell"
     }
 }

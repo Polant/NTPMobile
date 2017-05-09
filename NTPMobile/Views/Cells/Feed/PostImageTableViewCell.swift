@@ -9,12 +9,15 @@
 import UIKit
 import SDWebImage
 
-class PostImageTableViewCell: UITableViewCell {
-    @IBOutlet weak var postTextLabel: UILabel!
+class PostImageTableViewCell: PostTableViewCell {
+    
+    class var cellIdentifier: String {
+        return "postCellWithImage"
+    }
     @IBOutlet weak var postImageView: UIImageView!
     
-    func setup(with post: Post) {
-        postTextLabel.text = post.text
+    override func setup(with post: Post) {
+        super.setup(with: post)
         if let photoURL = post.photoUrl {
             postImageView.sd_setImage(with: URL(string: photoURL)!)
         }

@@ -72,21 +72,22 @@ extension FeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // FIXME: make dispatcher for cells
+        let reuseIdentifier = cellIdentifier(at: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         
-        let post = self.post(at: indexPath)
-        
-        if let _ = post?.photoUrl {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "postCellWithImage") as! PostImageTableViewCell
-            cell.setup(with: post!)
-            return cell
-            
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as! PostTextTableViewCell
-            cell.setup(with: post!)
+        guard let post = self.post(at: indexPath) else {
             return cell
         }
-        
+        return TypeDispatcher.value(cell)
+            .dispatch { (cell: PostTableViewCell) in cell.setup(with: post) }
+            .extract()
+    }
+
+    func cellIdentifier(at indexPath: IndexPath) -> String {
+        let post = self.post(at: indexPath)
+        return post?.hasPhoto ?? false
+            ? PostImageTableViewCell.cellIdentifier
+            : PostTextTableViewCell.cellIdentifier
     }
 }
 
