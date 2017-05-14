@@ -25,7 +25,6 @@
 		142684AC1EB267AB00EDDCE9 /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142684A81EB267AB00EDDCE9 /* Content.storyboard */; };
 		142684D51EB2681C00EDDCE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684B01EB2681C00EDDCE9 /* AppDelegate.swift */; };
 		142684D61EB2681C00EDDCE9 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684B11EB2681C00EDDCE9 /* RootRouter.swift */; };
-		142684D81EB2681C00EDDCE9 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684B51EB2681C00EDDCE9 /* AccessToken.swift */; };
 		142684DC1EB2681C00EDDCE9 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684B91EB2681C00EDDCE9 /* Storyboard.swift */; };
 		142684DD1EB2681C00EDDCE9 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684BE1EB2681C00EDDCE9 /* LoginInteractor.swift */; };
 		142684DE1EB2681C00EDDCE9 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142684C01EB2681C00EDDCE9 /* LoginRouter.swift */; };
@@ -65,6 +64,8 @@
 		142FD6D61EB8EB6F00537DE2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6D51EB8EB6F00537DE2 /* Category.swift */; };
 		142FD6E01EB91CD100537DE2 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FD6DF1EB91CD100537DE2 /* NotificationManager.swift */; };
 		14C423AC1EBF891A00858C36 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C423AB1EBF891A00858C36 /* Filter.swift */; };
+		14E5B00B1EC8B27F00341465 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E5B00A1EC8B27F00341465 /* AccessToken.swift */; };
+		14E5B0111EC8B78D00341465 /* App+MKAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E5B0101EC8B78D00341465 /* App+MKAnnotation.swift */; };
 		3E8154B305985CDE06D65C41 /* Pods_NTPMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,7 +90,6 @@
 		142684A91EB267AB00EDDCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Content.storyboard; sourceTree = "<group>"; };
 		142684B01EB2681C00EDDCE9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		142684B11EB2681C00EDDCE9 /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
-		142684B51EB2681C00EDDCE9 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		142684B91EB2681C00EDDCE9 /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		142684BE1EB2681C00EDDCE9 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		142684C01EB2681C00EDDCE9 /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
@@ -131,6 +131,8 @@
 		142FD6D51EB8EB6F00537DE2 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Entity/Category.swift; sourceTree = "<group>"; };
 		142FD6DF1EB91CD100537DE2 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = Managers/NotificationManager.swift; sourceTree = "<group>"; };
 		14C423AB1EBF891A00858C36 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Entity/Filter.swift; sourceTree = "<group>"; };
+		14E5B00A1EC8B27F00341465 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccessToken.swift; path = State/AccessToken.swift; sourceTree = "<group>"; };
+		14E5B0101EC8B78D00341465 /* App+MKAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "App+MKAnnotation.swift"; path = "Entity/App+MKAnnotation.swift"; sourceTree = "<group>"; };
 		7D0764A3EAAC9B95AF2380D1 /* Pods-NTPMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		AFE2E78804CD9334DE7FE0BC /* Pods-NTPMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.release.xcconfig"; sourceTree = "<group>"; };
 		CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NTPMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,7 +256,7 @@
 			children = (
 				142685281EB298B400EDDCE9 /* Managers */,
 				142685291EB29D4200EDDCE9 /* Entity */,
-				142684B51EB2681C00EDDCE9 /* AccessToken.swift */,
+				14E5B0091EC8B07E00341465 /* State */,
 				142684B91EB2681C00EDDCE9 /* Storyboard.swift */,
 			);
 			path = Models;
@@ -490,9 +492,10 @@
 			children = (
 				142FD6CD1EB8EB0100537DE2 /* LocalUser.swift */,
 				142FD6CE1EB8EB0100537DE2 /* Post.swift */,
-				142FD6CB1EB8EAD500537DE2 /* App.swift */,
 				142FD6D51EB8EB6F00537DE2 /* Category.swift */,
 				14C423AB1EBF891A00858C36 /* Filter.swift */,
+				142FD6CB1EB8EAD500537DE2 /* App.swift */,
+				14E5B0101EC8B78D00341465 /* App+MKAnnotation.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -538,6 +541,14 @@
 				142FD6C71EB8E9AF00537DE2 /* FeedViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		14E5B0091EC8B07E00341465 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				14E5B00A1EC8B27F00341465 /* AccessToken.swift */,
+			);
+			name = State;
 			sourceTree = "<group>";
 		};
 		188DA02B3541745EE5D04982 /* Pods */ = {
@@ -696,6 +707,7 @@
 				142685191EB2887300EDDCE9 /* UIViewController+Storyboard.swift in Sources */,
 				142685011EB26D8B00EDDCE9 /* ContainerSegue.swift in Sources */,
 				141F000D1EC1C4BB0051C411 /* PostTableViewCell.swift in Sources */,
+				14E5B00B1EC8B27F00341465 /* AccessToken.swift in Sources */,
 				142684D51EB2681C00EDDCE9 /* AppDelegate.swift in Sources */,
 				141F00131EC1C5020051C411 /* PostTextTableViewCell.swift in Sources */,
 				141F00121EC1C5020051C411 /* PostImageTableViewCell.swift in Sources */,
@@ -720,7 +732,6 @@
 				142684DC1EB2681C00EDDCE9 /* Storyboard.swift in Sources */,
 				142684F51EB26D8300EDDCE9 /* MenuContainerInteractor.swift in Sources */,
 				142684E01EB2681C00EDDCE9 /* OAuthViewController.swift in Sources */,
-				142684D81EB2681C00EDDCE9 /* AccessToken.swift in Sources */,
 				141F001C1EC1C7320051C411 /* TypeDispatcher.swift in Sources */,
 				142684E41EB2681C00EDDCE9 /* RegistrationViewController.swift in Sources */,
 				142684E61EB2681C00EDDCE9 /* Interactor.swift in Sources */,
@@ -733,6 +744,7 @@
 				142684DD1EB2681C00EDDCE9 /* LoginInteractor.swift in Sources */,
 				142685091EB270BF00EDDCE9 /* ObjcException.m in Sources */,
 				142684DF1EB2681C00EDDCE9 /* LoginViewController.swift in Sources */,
+				14E5B0111EC8B78D00341465 /* App+MKAnnotation.swift in Sources */,
 				142684E31EB2681C00EDDCE9 /* RegistrationRouter.swift in Sources */,
 				142685051EB26D8B00EDDCE9 /* Views.swift in Sources */,
 				142FD6D61EB8EB6F00537DE2 /* Category.swift in Sources */,

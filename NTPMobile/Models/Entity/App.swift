@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class App {
+final class App: NSObject {
     
     var id: Int?
     var name: String

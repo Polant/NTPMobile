@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-3742" y="265"/>
         </scene>
-        <!--Service View Controller-->
+        <!--Services-->
         <scene sceneID="iWv-24-TH0">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="uD0-eK-lhE" customClass="ServiceViewController" customModule="NTPMobile" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,8 +38,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Tdc-lU-5Mi">
+                                <rect key="frame" x="0.0" y="64" width="375" height="333.5"/>
+                                <connections>
+                                    <outlet property="delegate" destination="uD0-eK-lhE" id="lte-VI-h6G"/>
+                                </connections>
+                            </mapView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tDA-Rd-FKz">
-                                <rect key="frame" x="0.0" y="64" width="375" height="467"/>
+                                <rect key="frame" x="0.0" y="397.5" width="375" height="201.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="beacon_cell" textLabel="e4C-Ox-XJl" style="IBUITableViewCellStyleDefault" id="f1U-c4-T7v">
@@ -65,7 +72,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UsY-vu-RkI">
-                                <rect key="frame" x="143" y="547" width="89" height="44"/>
+                                <rect key="frame" x="143" y="611" width="89" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="iR9-C4-cIF"/>
                                 </constraints>
@@ -84,61 +91,40 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="actionStartLookup:" destination="uD0-eK-lhE" eventType="touchUpInside" id="ZSG-tr-Yn2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZh-Ei-9mQ">
-                                <rect key="frame" x="144" y="607" width="87" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="cog-wK-PyV"/>
-                                </constraints>
-                                <state key="normal" title="Stop Lookup">
-                                    <color key="titleColor" red="0.95110124350000003" green="0.3137282133" blue="0.10862582179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                        <color key="value" red="0.95110124350000003" green="0.3137282133" blue="0.10862582179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="actionStopLookup:" destination="uD0-eK-lhE" eventType="touchUpInside" id="MzE-eG-vte"/>
+                                    <action selector="actionToggleLookup:" destination="uD0-eK-lhE" eventType="touchUpInside" id="xGZ-ZE-C1Q"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="AA0-p7-dOj">
-                                <rect key="frame" x="78" y="559" width="20" height="20"/>
+                                <rect key="frame" x="78" y="623" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tDA-Rd-FKz" firstAttribute="top" secondItem="fQl-d9-Brp" secondAttribute="bottom" id="D2n-9B-kbj"/>
+                            <constraint firstItem="Tdc-lU-5Mi" firstAttribute="top" secondItem="fQl-d9-Brp" secondAttribute="bottom" id="1ph-BS-puw"/>
+                            <constraint firstItem="Tdc-lU-5Mi" firstAttribute="leading" secondItem="BLV-iZ-ird" secondAttribute="leading" id="6Ul-5i-kXm"/>
+                            <constraint firstItem="Tdc-lU-5Mi" firstAttribute="height" secondItem="BLV-iZ-ird" secondAttribute="height" multiplier="0.5" id="718-dS-eAe"/>
                             <constraint firstItem="UsY-vu-RkI" firstAttribute="centerX" secondItem="BLV-iZ-ird" secondAttribute="centerX" id="Did-HT-Qpe"/>
                             <constraint firstItem="UsY-vu-RkI" firstAttribute="centerY" secondItem="AA0-p7-dOj" secondAttribute="centerY" id="GJJ-pO-aFd"/>
                             <constraint firstItem="tDA-Rd-FKz" firstAttribute="leading" secondItem="BLV-iZ-ird" secondAttribute="leading" id="TbG-D7-kWg"/>
-                            <constraint firstItem="suN-Kf-jvd" firstAttribute="top" secondItem="cZh-Ei-9mQ" secondAttribute="bottom" constant="16" id="asX-UE-VJT"/>
-                            <constraint firstItem="cZh-Ei-9mQ" firstAttribute="centerX" secondItem="BLV-iZ-ird" secondAttribute="centerX" id="b05-wM-2tJ"/>
-                            <constraint firstItem="cZh-Ei-9mQ" firstAttribute="top" secondItem="UsY-vu-RkI" secondAttribute="bottom" constant="16" id="hBC-lM-2Qx"/>
+                            <constraint firstItem="tDA-Rd-FKz" firstAttribute="top" secondItem="Tdc-lU-5Mi" secondAttribute="bottom" id="cdR-ga-q29"/>
+                            <constraint firstItem="suN-Kf-jvd" firstAttribute="top" secondItem="UsY-vu-RkI" secondAttribute="bottom" constant="12" id="iWL-9Q-xSp"/>
                             <constraint firstAttribute="trailing" secondItem="tDA-Rd-FKz" secondAttribute="trailing" id="m87-2U-ahX"/>
-                            <constraint firstItem="UsY-vu-RkI" firstAttribute="top" secondItem="tDA-Rd-FKz" secondAttribute="bottom" constant="16" id="mft-JL-g51"/>
+                            <constraint firstItem="UsY-vu-RkI" firstAttribute="top" secondItem="tDA-Rd-FKz" secondAttribute="bottom" constant="12" id="mft-JL-g51"/>
+                            <constraint firstAttribute="trailing" secondItem="Tdc-lU-5Mi" secondAttribute="trailing" id="nZP-aZ-CzK"/>
                             <constraint firstItem="UsY-vu-RkI" firstAttribute="leading" secondItem="AA0-p7-dOj" secondAttribute="trailing" constant="45" id="wNI-eP-H05"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="PRZ-3M-oUC"/>
+                    <navigationItem key="navigationItem" title="Services" id="PRZ-3M-oUC"/>
                     <connections>
                         <outlet property="activityIndicator" destination="AA0-p7-dOj" id="mQC-OU-eVI"/>
-                        <outlet property="startLookupButton" destination="UsY-vu-RkI" id="gf7-E3-YaZ"/>
-                        <outlet property="stopLookupButton" destination="cZh-Ei-9mQ" id="UbZ-Le-EqT"/>
+                        <outlet property="lookupButton" destination="UsY-vu-RkI" id="0lk-bO-c5f"/>
+                        <outlet property="mapView" destination="Tdc-lU-5Mi" id="hN4-mF-nos"/>
                         <outlet property="tableView" destination="tDA-Rd-FKz" id="ENo-75-lSJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEW-Fk-96G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2986" y="265"/>
+            <point key="canvasLocation" x="-2986.4000000000001" y="264.91754122938534"/>
         </scene>
     </scenes>
 </document>
