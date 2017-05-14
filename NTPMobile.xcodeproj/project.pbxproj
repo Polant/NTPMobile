@@ -66,6 +66,8 @@
 		14C423AC1EBF891A00858C36 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C423AB1EBF891A00858C36 /* Filter.swift */; };
 		14E5B00B1EC8B27F00341465 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E5B00A1EC8B27F00341465 /* AccessToken.swift */; };
 		14E5B0111EC8B78D00341465 /* App+MKAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E5B0101EC8B78D00341465 /* App+MKAnnotation.swift */; };
+		14E5B0361EC8EECE00341465 /* ServiceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E5B0351EC8EECE00341465 /* ServiceInteractor.swift */; };
+		14E5B0391EC8F18B00341465 /* ServiceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E5B0381EC8F18B00341465 /* ServiceRouter.swift */; };
 		3E8154B305985CDE06D65C41 /* Pods_NTPMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +135,8 @@
 		14C423AB1EBF891A00858C36 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Entity/Filter.swift; sourceTree = "<group>"; };
 		14E5B00A1EC8B27F00341465 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccessToken.swift; path = State/AccessToken.swift; sourceTree = "<group>"; };
 		14E5B0101EC8B78D00341465 /* App+MKAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "App+MKAnnotation.swift"; path = "Entity/App+MKAnnotation.swift"; sourceTree = "<group>"; };
+		14E5B0351EC8EECE00341465 /* ServiceInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceInteractor.swift; path = NTPMobile/Modules/Service/Logic/ServiceInteractor.swift; sourceTree = SOURCE_ROOT; };
+		14E5B0381EC8F18B00341465 /* ServiceRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceRouter.swift; path = Route/ServiceRouter.swift; sourceTree = "<group>"; };
 		7D0764A3EAAC9B95AF2380D1 /* Pods-NTPMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		AFE2E78804CD9334DE7FE0BC /* Pods-NTPMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTPMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTPMobile/Pods-NTPMobile.release.xcconfig"; sourceTree = "<group>"; };
 		CCA145F1CDE7E6E77B61F566 /* Pods_NTPMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NTPMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,7 +186,9 @@
 		1425F1161EB3CCB300F24E0A /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				14E5B0371EC8EF2100341465 /* Logic */,
 				1425F1171EB3CCB300F24E0A /* View */,
+				14E5B03A1EC8F1D700341465 /* Route */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -551,6 +557,22 @@
 			name = State;
 			sourceTree = "<group>";
 		};
+		14E5B0371EC8EF2100341465 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				14E5B0351EC8EECE00341465 /* ServiceInteractor.swift */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		14E5B03A1EC8F1D700341465 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				14E5B0381EC8F18B00341465 /* ServiceRouter.swift */,
+			);
+			name = Route;
+			sourceTree = "<group>";
+		};
 		188DA02B3541745EE5D04982 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -715,6 +737,7 @@
 				142FD6D31EB8EB0800537DE2 /* KeyboardManager.swift in Sources */,
 				142685041EB26D8B00EDDCE9 /* Constraints.swift in Sources */,
 				141F001E1EC1CBF80051C411 /* String+Trimming.swift in Sources */,
+				14E5B0361EC8EECE00341465 /* ServiceInteractor.swift in Sources */,
 				1425F1191EB3CCB300F24E0A /* ServiceViewController.swift in Sources */,
 				142FD6CF1EB8EB0100537DE2 /* LocalUser.swift in Sources */,
 				142FD6D41EB8EB0800537DE2 /* ServiceManager.swift in Sources */,
@@ -741,6 +764,7 @@
 				142684E21EB2681C00EDDCE9 /* RegistrationInteractor.swift in Sources */,
 				142FD6C81EB8E9AF00537DE2 /* FeedInteractor.swift in Sources */,
 				142FD6CC1EB8EAD500537DE2 /* App.swift in Sources */,
+				14E5B0391EC8F18B00341465 /* ServiceRouter.swift in Sources */,
 				142684DD1EB2681C00EDDCE9 /* LoginInteractor.swift in Sources */,
 				142685091EB270BF00EDDCE9 /* ObjcException.m in Sources */,
 				142684DF1EB2681C00EDDCE9 /* LoginViewController.swift in Sources */,

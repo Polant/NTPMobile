@@ -18,11 +18,14 @@ class MenuContainerRouter: Router<MenuContainerViewController> {
     }
     
     func presentServiceViewController() {
-        let viewController = Storyboard.service
+        let navigationController = Storyboard.service
             .instantiate()
-            .instantiateInitialViewController()!
+            .instantiateInitialViewController() as! UINavigationController
         
-        self.viewController?.setCentral(viewController: viewController)
+        let serviceViewController = navigationController.topViewController as! ServiceViewController
+        ServiceRouter.injectModule(in: serviceViewController)
+        
+        self.viewController?.setCentral(viewController: navigationController)
         self.viewController?.toggleLeft(animated: true, completion: nil)
     }
     

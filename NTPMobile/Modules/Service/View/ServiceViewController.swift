@@ -19,6 +19,9 @@ class ServiceViewController: UIViewController {
     @IBOutlet weak var lookupButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    var interactor: ServiceInteractor!
+    var router: ServiceRouter!
+    
     var timer: Timer?
     var isLookupStarted = false
     
@@ -57,6 +60,7 @@ class ServiceViewController: UIViewController {
     
     private func startLookup() {
         isLookupStarted = true
+        datasource.removeAll(keepingCapacity: true)
         lookupButton.setTitle("Stop Lookup", for: [])
         activityIndicator.startAnimating()
         start()
@@ -74,16 +78,29 @@ class ServiceViewController: UIViewController {
         tableView.reloadData()
         
         timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
-            let direction = self.directions[random(max: self.directions.count - 1)]
-            let steps = random(max: 100)
-            self.datasource.insert("Target place is \(direction) from your in \(steps) steps", at: 0)
-            self.addInfo()
+            self.getDirection()
         }
     }
     
     private func stop() {
         timer?.invalidate()
         timer = nil
+    }
+    
+    private func getDirection() {
+        self.interactor.getPathDirection { result in
+            
+            let message: String
+            switch result {
+            case let .success(pathDirection):
+                message = pathDirection
+            case let .error(errorMessage):
+                message = errorMessage
+            }
+            
+            self.datasource.insert(message, at: 0)
+            self.addInfo()
+        }
     }
     
     private func addInfo() {

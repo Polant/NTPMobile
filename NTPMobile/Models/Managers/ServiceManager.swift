@@ -15,6 +15,7 @@ enum ResponseResult <Value> {
 }
 
 typealias AuthCompletion = (ResponseResult<Bool>) -> Void
+typealias PathDirection = String
 
 class ServiceManager {
     
@@ -160,6 +161,36 @@ class ServiceManager {
                 
         }
     }
+    
+    
+    // MARK: - Path Directions
+    
+    func getPathDirection(completion: @escaping (ResponseResult<PathDirection>) -> Void) {
+        
+        guard let user = localUser else {
+            completion(.error(message: "wrong local credentials"))
+            return
+        }
+        
+        Alamofire
+            .request(PathRouter.getPath(userId: String(user.id), token: user.token.tokenString))
+            .responseJSON { (dataResponse) in
+                
+                guard let response = dataResponse.result.value as? [String: Any] else {
+                    completion(.error(message: "something went wrong"))
+                    return
+                }
+                
+                let success = !(response["error"] as! Bool)
+                if success {
+                    let path = response["path"] as! String
+                    completion(.success(path))
+                } else {
+                    debugPrint(response)
+                    completion(.success("Wrong data format"))
+                }
+        }
+    }
 }
 
 
@@ -283,6 +314,44 @@ enum AppRouter: URLRequestConvertible {
                 "user_id": userId
             ]
             urlRequest = try URLEncoding.default.encode(urlRequest, with:params)
+        }
+        return urlRequest
+    }
+}
+
+// MARK: - Path Directions
+
+enum PathRouter: URLRequestConvertible {
+    
+    private static let baseURLString = "\(Constants.API.path)"
+    
+    case getPath(userId: String, token: String)
+    
+    private var method: HTTPMethod {
+        return .post
+    }
+    
+    private var path: String {
+        switch self {
+        case .getPath:
+            return "/path"
+        }
+    }
+    
+    
+    //MARK: URLRequestConvertible
+    
+    func asURLRequest() throws -> URLRequest {
+        
+        let url = try PathRouter.baseURLString.asURL()
+        
+        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+        urlRequest.httpMethod = method.rawValue
+        
+        switch self {
+        case let .getPath(userId, token):
+            let params = ["token": token, "user_id": userId]
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
         }
         return urlRequest
     }
